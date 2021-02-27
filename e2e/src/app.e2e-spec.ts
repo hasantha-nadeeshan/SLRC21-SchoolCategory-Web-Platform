@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', async () => {
     await page.navigateTo();
-    expect(await page.getTitleText()).toEqual('testbootstrap app is running!');
+    expect(await page.getTitleText()).toEqual('SLRC21-SchoolCategory-Web-Platform app is running!');
   });
 
   afterEach(async () => {

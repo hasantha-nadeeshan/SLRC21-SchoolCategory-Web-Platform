@@ -1,9 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "2079f375-8456-4cf5-90c8-230c1e006f0f"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "testbootstrap": {
+    "SLRC21-SchoolCategory-Web-Platform": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/testbootstrap",
+            "outputPath": "dist/SLRC21-SchoolCategory-Web-Platform",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -30,7 +33,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+            
+            ]
           },
           "configurations": {
             "production": {
@@ -50,13 +55,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "7mb",
+                  "maximumError": "8mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "7mb",
+                  "maximumError": "8mb"
                 }
               ]
             }
@@ -65,18 +70,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "testbootstrap:build"
+            "browserTarget": "SLRC21-SchoolCategory-Web-Platform:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "testbootstrap:build:production"
+              "browserTarget": "SLRC21-SchoolCategory-Web-Platform:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "testbootstrap:build"
+            "browserTarget": "SLRC21-SchoolCategory-Web-Platform:build"
           }
         },
         "test": {
@@ -91,9 +96,14 @@
               "src/assets"
             ],
             "styles": [
+            "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+             "node_modules/jquery/dist/jquery.min.js",
+              "node_modul/popper.js/dist/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           }
         },
         "lint": {
@@ -113,16 +123,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "testbootstrap:serve"
+            "devServerTarget": "SLRC21-SchoolCategory-Web-Platform:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "testbootstrap:serve:production"
+              "devServerTarget": "SLRC21-SchoolCategory-Web-Platform:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "testbootstrap"
+  "defaultProject": "SLRC21-SchoolCategory-Web-Platform"
 }
