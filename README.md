@@ -1,6 +1,6 @@
 # SLRC21-SchoolCategory-Web-Platform
-
-1.Select master branch <br>
+<ol>
+<li>Select master branch </li></ol>
 2.Clone it to your device
 3.Open the folder with any IDE (VS code)
 4.Open a new terminal
