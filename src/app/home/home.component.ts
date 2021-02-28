@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  launcheDate = new Date('Feb 26, 2021 00:00:00').getTime();
+  launcheDate = new Date('Mar 04, 2021 00:00:00').getTime();
   days=0;
   hours=0;
   mins=0;

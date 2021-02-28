@@ -4,6 +4,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SharedService {
-
+  taskNumber:string
   constructor() { }
+  setTaskNumber(data: string){
+    this.taskNumber = data;
+  }
+  getTaskNumber(){
+    return this.taskNumber;
+  }
 }

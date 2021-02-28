@@ -29,16 +29,6 @@
 .countdownbox div:first-child{
 	background: #17a2b8;
 }
-.logo{
-	width: 50px;
-	height: 50px;
-	background-color:white;
-	position: fixed;
-	top: 5px;
-	left: 5px;
-	border-radius: 50%;
-	z-index: 3;
-}
 .regbutton{
 	width: 90px;
 	height: 0px;
@@ -59,12 +49,7 @@
 	cursor: pointer;
 	overflow: hidden;
 }
-.logo img{
-	position:fixed;
-	width:inherit;
-	height: inherit;
 
-}
 .platinum-sponsors>p,.gold-sponsors>p,.silver-sponsors>p {
 	display: flex;
 	flex-direction: row;
@@ -163,12 +148,6 @@
 	}
 	.countdownbox span{
 		font-size: 15px;
-	}
-	.logo{
-		left: 30px;
-		top: 10px;
-		width:70px;
-		height:70px;
 	}
 	.platinum-sponsors>p,.gold-sponsors>p,.silver-sponsors>p {
 		font-size: 30px;

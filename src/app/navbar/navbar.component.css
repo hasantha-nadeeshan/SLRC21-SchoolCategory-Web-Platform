@@ -35,6 +35,22 @@
 }.navbar-light .navbar-nav .nav-link {
 	color: #fff;
 }
+.logo{
+	width: 50px;
+	height: 50px;
+	background-color:white;
+	position: fixed;
+	top: 5px;
+	left: 5px;
+	border-radius: 50%;
+	z-index: 3;
+    border: 1px solid #17a2b8;
+}
+.logo img{
+	position:fixed;
+	width:inherit;
+	height: inherit;
+}
 @media screen and (min-width: 767px) {
 	.navbar-nav a {
 		font-size: 20px;
@@ -45,4 +61,10 @@
     .navbar ul li{
         margin: 2px;
     }
+    .logo{
+		left: 30px;
+		top: 10px;
+		width:70px;
+		height:70px;
+	}
 }

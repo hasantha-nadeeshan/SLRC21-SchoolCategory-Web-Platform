@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import{SharedService} from "../shared/shared.service"
 @Component({
   selector: 'app-easy-tasks',
   templateUrl: './easy-tasks.component.html',
@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EasyTasksComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private shared : SharedService) { }
+  taskNumber = "task1";
   ngOnInit(): void {
+    this.shared.setTaskNumber(this.taskNumber);
   }
 
 }
