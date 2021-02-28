@@ -4,15 +4,15 @@ import {BehaviorSubject} from 'rxjs';
   providedIn: 'root'
 })
 export class SharedService {
-  private tasknumber = new BehaviorSubject<string>("");
-  public taskNumber$ = this.tasknumber.asObservable();
-  private difficulty = new BehaviorSubject<string>("");
-  public difficulty$ = this.difficulty.asObservable();
+  private tasknumber = new BehaviorSubject<string>("");       //for set
+  public taskNumber$ = this.tasknumber.asObservable();        //subscribing topic
+  private difficulty = new BehaviorSubject<string>("");       //for set
+  public difficulty$ = this.difficulty.asObservable();        //subscribing topic
   constructor() { }
-  setTaskNumber(data:any){
-    this.tasknumber.next(data);
+  setTaskNumber(data:any){          //seting method
+    this.tasknumber.next(data);     //next is important
   }
-  setDifficulty(data:any){
-    this.difficulty.next(data);
+  setDifficulty(data:any){          //setting method
+    this.difficulty.next(data);     //net is important
   }
 }
