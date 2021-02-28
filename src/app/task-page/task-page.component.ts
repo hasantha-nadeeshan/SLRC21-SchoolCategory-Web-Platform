@@ -6,11 +6,14 @@ import{SharedService} from "../shared/shared.service"
   styleUrls: ['./task-page.component.css']
 })
 export class TaskPageComponent implements OnInit {
-  taskNumber:string;
+  difficulty='';
+  taskNumber='';
+  
   constructor(private shared:SharedService) { }
 
   ngOnInit(): void {
-    this.taskNumber = this.shared.getTaskNumber();
+    this.shared.taskNumber$.subscribe(x=> this.taskNumber=x);
+    this.shared.difficulty$.subscribe(y=> this.difficulty=y);
   }
 
 }

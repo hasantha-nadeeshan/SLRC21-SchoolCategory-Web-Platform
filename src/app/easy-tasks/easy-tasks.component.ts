@@ -6,11 +6,14 @@ import{SharedService} from "../shared/shared.service"
   styleUrls: ['./easy-tasks.component.css']
 })
 export class EasyTasksComponent implements OnInit {
-
   constructor(private shared : SharedService) { }
-  taskNumber = "task1";
+  
   ngOnInit(): void {
-    this.shared.setTaskNumber(this.taskNumber);
   }
-
+  
+  onClickMe(tasknum: any,difficulty:any) {
+  this.shared.setTaskNumber(tasknum);
+  this.shared.setDifficulty(difficulty);
+  }
+  
 }
