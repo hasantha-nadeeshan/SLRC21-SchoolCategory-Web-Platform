@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from '../services/firebase.service';
 import{SharedService} from "../shared/shared.service"
 @Component({
   selector: 'app-easy-tasks',
@@ -6,7 +7,10 @@ import{SharedService} from "../shared/shared.service"
   styleUrls: ['./easy-tasks.component.css']
 })
 export class EasyTasksComponent implements OnInit {
-  constructor(private shared : SharedService) { }   //private constructir to use in this file
+  constructor(
+    private shared : SharedService,
+    public authService: FirebaseService
+    ) { }   //private constructir to use in this file
   
   ngOnInit(): void {
   }
