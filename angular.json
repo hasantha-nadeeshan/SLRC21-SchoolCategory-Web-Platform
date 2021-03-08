@@ -27,14 +27,16 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
+              
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
+              "./node_modules/aos/dist/aos.css",
               "src/styles.css"
             ],
             "scripts": [
-            
+    
             ]
           },
           "configurations": {

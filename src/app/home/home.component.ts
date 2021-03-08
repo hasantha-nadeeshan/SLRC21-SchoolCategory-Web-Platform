@@ -8,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor() { }
-
-  ngOnInit(): void {
+  scrollWindow(){
+    window.scroll(0,676/2); 
   }
-  launcheDate = new Date('Mar 04, 2021 00:00:00').getTime();
+  ngOnInit() {
+this.scrollWindow();
+    
+  }
+  launcheDate = new Date('Mar 14, 2021 00:00:00').getTime();
   days=0;
   hours=0;
   mins=0;
@@ -31,17 +35,13 @@ export class HomeComponent implements OnInit {
       document.getElementById("demo").innerHTML= 'Expeired';
     }
   },1000);
-  prevScrollpos = window.pageYOffset;
-scroll=window.onscroll=()=> {
-  let currentScrollPos = window.pageYOffset;
-  if (this.prevScrollpos > currentScrollPos) {
-    document.getElementById("navbar-container").style.top = "0";
-  } else {
-    if(currentScrollPos>0 && this.prevScrollpos>0){
-      document.getElementById("navbar-container").style.top = "-70px";
-    }
-  }
-  this.prevScrollpos = currentScrollPos;
+  
+ 
+  
 }
 
+
+function scrollWindow() {
+  throw new Error('Function not implemented.');
 }
+

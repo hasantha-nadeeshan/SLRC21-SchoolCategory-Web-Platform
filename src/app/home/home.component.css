@@ -1,17 +1,47 @@
-.carousel-item,.w-100 {
-	height: 26vh;
-	min-height: 180px;
+
+#home{
+	position: relative;
+}
+#intro,#sponsorbox,#competition-box{
+	height: 100vh;
+	background: url("/assets/main-back.png")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	min-height: 667px;
+}
+#sponsorbox{
+	position: relative;
+	width: 100vw;
+	background: url("/assets/second-back.jpg")no-repeat center center fixed;
+}
+#competition-box{
+	position: relative;
+	width: 100vw;
+	background: url("/assets/third-back.png")no-repeat center center fixed;
+}
+#timeline-box{
+	height: 100vh;
+	position: relative;
+	width: 100vw;
+	background: url("/assets/fifth-back.jpg")no-repeat center center fixed;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	min-height: 667px;
 }
 .countdownbox{
+	float: left;
 	font-size: 17px;
-	height: 0px;
-	position: relative;
-	top: -95px;
+	position: absolute;
+	left: 10px;
+	top: 230px;
 	color: white;
 	display: flex;
-	justify-content: center;
-	align-items: center;
 	text-align: center;
+	
 }
 .countdownbox div{
 	width: 40px;
@@ -31,113 +61,178 @@
 }
 .regbutton{
 	width: 90px;
-	height: 0px;
-	position: relative;
-	top: -65px;
+	position: absolute;
+	top: 300px;
 	font-size: 10px;
+	left: 10px;
 }
 .reg-btn{
-	position: relative;
 	width: 100%;
 	padding: 7px;
 	text-align: center;
 	border-radius: 25px;
 	font-weight: bold;
-	border:2px solid white;
-	background: white ;
-	color: #17a2b8;
+	background: rgba(0,0,0,0.4) ;
+	backdrop-filter: blur(10px);
+	color: white;
 	cursor: pointer;
 	overflow: hidden;
 }
-
-.platinum-sponsors>p,.gold-sponsors>p,.silver-sponsors>p {
-	display: flex;
-	flex-direction: row;
-	color:#a0b2c6;
-	font-weight: bolder;
-	font-size: 20px;
+.social-media{
+	width: 20px;
+	height: 100px;
+	float: left;
+	position: absolute;
+	left: 30px;
+	bottom: 50px;
+	font-size: 25px;
 }
-.gold-sponsors>p{
-	color: gold;
+.social-media li, .social-media a{
+	color:black;
 }
-.silver-sponsors>p{
-	color: silver;
+.heading{
+	width: 250px;
+	position: absolute;
+	left: 10px;
+	top: 130px;
+	height: 100px;
+	float: left;
 }
-.platinum-sponsors>p:before, .platinum-sponsors>p:after,
-.gold-sponsors>p:before, .gold-sponsors>p:after,
-.silver-sponsors>p:before, .silver-sponsors>p:after{
-	content: "";
-	flex: 1 1;
-	border-bottom: 5px solid #a0b2c6;
-	margin: auto;
-}
-.silver-sponsors>p:before,.silver-sponsors>p:after{
-	border-bottom: 5px solid silver;
-}
-.gold-sponsors>p:before,.gold-sponsors>p:after{
-	border-bottom: 5px solid gold;
-}
-.platinum-sponsors>p:before,.gold-sponsors>p:before {
-	margin-right: 10px
-}
-.platinum-sponsors>p:after,
-.gold-sponsors>p:after,
-.silver-sponsors>p:after  {
-	padding-top: 2px;
-	margin-left: 10px
-}
-.platinum-row,.gold-row,.silver-row{
-	width: 100%;
-	height: 30px;
-}
-.platinum-row>img,.gold-row>img,.silver-row>img{
-	width: 100px;
+.heading img{
+	width: inherit;
 	height: inherit;
+}
+.logo-box{
+    display: block;
+    position: absolute;
+	bottom: 100px;
+	right: 0;
+    height: 100px;  
+}
+.UOM-logo img,.ENTC-logo img,.ECLUB-logo img{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	width: 100px;
+	height: 100px;
 }
-.description1-card{
-	padding:0;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	z-index: 2;
+.ENTC-logo img{
+	height: 40px;
 }
-.description1-img{
-	display: none;
-}
-.description1-body>p{
-	font-size: 12px;
+.ECLUB-logo img{
+	width: 50px;
+	height: 50px;
 }
 
 
-@media screen and (min-width: 720px) {
-	
-	.description1-body p{
+.sponsor-row1{
+	display: flex;
+	height: 250px;
+	position: absolute;
+	top: 10px;
+	background-color: rgba(5,3,25,0.4);
+}
+.description-slrc,.description-competition,.description-rule,.timeline-body{
+    display: block;
+    position: absolute;
+	top: 280px;
+    background-color:rgba(5,3,25,0.8);
+	color: white;
+	text-align: center;
+	font-size: 15px;
+}
+.description-competition{
+	top: 20px;
+}
+.description-rule{
+	top:400px;
+	font-size: 11px;
+}
+.timeline-body{
+	top: 320px;
+}
+.description-slrc-slides,.description-competition-slides,.description-rule-slides{
+    display: none;
+	height: inherit;
+	background: url("/assets/slrc_2019-img1.jpg")no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.description-slrc-body,.description-competition-body,.description-rule-body{
+    display: block;
+}
+@media screen and (min-width: 576px) {
+	.logo-box{
+		bottom: 10px;
+	}
+	.ENTC-logo img,.ECLUB-logo img{
+		margin-top:30px;
+	}
+	.description-rule{
+		top:350px ;
 		font-size: 15px;
 	}
-	.carousel-item,.w-100{
-		height: 40vh;
-		min-height: 220px;
+	.timeline-body{
+		top: 340px;
+	}
+}
+@media screen and (min-width: 720px) {
+	
+	.sponsor-row1{
+		display: flex;
+		position: absolute;
+		top: 30px;
+		background-color: rgba(5,3,25,0.4);
+		padding-top: 30px;
+	}
+	.silver1,.silver2{
+		width: 80px;
+		height: 80px;
+		border: 1px solid silver;
+	}
+	.gold1,.gold2{
+		width: 100px;
+		height: 100px;
+		border: 2px solid gold;
+	}
+	.platinum{
+		width: 160px;
+		height: 160px;
+		border: 3px solid white;
+	}
+	.description-slrc,.timeline-body{
+		font-size: 20px;
+		top: 330px;
+		text-align: center;
+	}
+	.description-competition{
+		text-align: center;
+	}
+	.description-competition-slides,.description-rule-slides,.description-slrc-slides{
+		display: block;
+	}
+	
+	.description-slrc-body,.description-competition-body,.description-rule-body{
+		padding: 2px;
 	}
 }
 @media screen and (min-width: 767px) {
-    .carousel-item,.w-100{
-		height: 40vh;
-		min-height: 350px;
-	}
+	
 	.regbutton{
 		width: 190px;
 		font-size: 20px;
+		top: 420px;
+		left: 30px;
 	}
 	.reg-btn{
 		font-size: 20px;
-		top:-20px;
 	}
 	.countdownbox{
+		left: 30px;
 		font-size: 25px;
-		top: -130px;
+		top: 310px;
 	}
 	.countdownbox div{
 		width: 70px;
@@ -149,59 +244,59 @@
 	.countdownbox span{
 		font-size: 15px;
 	}
-	.platinum-sponsors>p,.gold-sponsors>p,.silver-sponsors>p {
-		font-size: 30px;
+	.social-media{
+		left: 30px;
 	}
-	.platinum-sponsors>p:before, .platinum-sponsors>p:after{
-		border-bottom: 5px solid #a0b2c6;
-		margin: auto;
+	.logo-box{
+		bottom: 100px;
 	}
-	.gold-sponsors>p:before, .gold-sponsors>p:after{
-		border-bottom: 5px solid gold;
-		margin: auto;
+	.UOM-logo img,.ENTC-logo img{
+		width: 180px;
+		height: 180px;
 	}
-	.silver-sponsors>p:before, .silver-sponsors>p:after{
-		border-bottom: 5px solid silver;
-		margin: auto;
+	.ENTC-logo img,.ECLUB-logo img{
+		height: 50px;
+		margin-top: 60px;
 	}
-	.platinum-sponsors>p:before ,
-	.gold-sponsors>p:before,
-	.silver-sponsors>p:before  {
-		margin-right: 15px
+	.ECLUB-logo img{
+		width: 80px;
+		height: 80px;
 	}
-	.platinum-sponsors>p:after,
-	.gold-sponsors>p:after,
-	.silver-sponsors>p:after {
-		padding-top: 2.5px;
-		margin-left: 15px
+	.heading{
+		width: 450px;
+		height: 180px;
+		left: 30px;
 	}
-	.platinum-row,.gold-row,.silver-row{
-		height: 60px;
+	.silver1,.silver2{
+		width: 100px;
+		height: 100px;
+		border: 1px solid silver;
 	}
-	.platinum-row>img,.gold-row>img,.silver-row>img{
-		width: 200px;
+	.gold1,.gold2{
+		width: 120px;
+		height: 120px;
+		border: 2px solid gold;
 	}
-	.description1-img{
-		display: block;
-		background-color: #17a2b8;
+	.platinum{
+		width: 180px;
+		height: 180px;
+		border: 3px solid white;
 	}
-	.description1-img>img{
-		display: none;
+	.description-slrc{
+		top: 280px;
+		font-size: 20px;
 	}
-	.description1-body>p{
-		font-size: 15px;
+	.timeline-body{
+		top: 360px;
 	}
+	
 }
 @media screen and (min-width: 1000px) {
-	.carousel-item,.w-100{
-		height: 80vh;
-	}
-	.reg-btn{	
-		top: -15px;
+	.regbutton{
+		top: 440px;
 	}
 	.countdownbox{
 		font-size: 40px;
-		top: -140px;
 	}
 	.countdownbox div{
 		width: 80px;
@@ -210,38 +305,43 @@
 		border-radius: 15px;
 		margin: 10px;
 	}
-	.platinum-sponsors>p,.gold-sponsors>p ,.silver-sponsors>p{
-		font-size: 50px;
+	.silver1,.silver2{
+		width: 90px;
+		height: 90px;
 	}
-	.platinum-sponsors>p:before, .platinum-sponsors>p:after{
-		border-bottom: 7px solid #a0b2c6;
+	.gold1,.gold2{
+		width: 110px;
+		height: 110px;
 	}
-	.gold-sponsors>p:before, .gold-sponsors>p:after{
-		border-bottom: 7px solid gold;
+	.platinum{
+		width: 130px;
+		height: 130px;
 	}
-	.silver-sponsors>p:before, .silver-sponsors>p:after{
-		border-bottom: 7px solid silver;
+	.silver1,.silver2{
+		width: 120px;
+		height: 120px;
+		border: 1px solid silver;
 	}
-	.platinum-sponsors>p:after,
-	.gold-sponsors>p:after,
-	.silver-sponsors>p:after {
-		margin-left: 20px;
-		padding-top: 2.25px;
+	.gold1,.gold2{
+		width: 140px;
+		height: 140px;
+		border: 2px solid gold;
 	}
-	.platinum-sponsors>p:before,
-	.gold-sponsors>p:before,
-	.silver-sponsors>p:before{
-		margin-right: 20px;
+	.platinum{
+		width: 200px;
+		height: 200px;
+		border: 3px solid white;
 	}
-	.platinum-row,.gold-row,.silver-row{
-		height: 70px;
+	.description-slrc,.description-slrc-body,.description-slrc-slides,
+	.description-competition,.description-competition-body,.description-competition-slides{
+		min-height: 300px;
+		font-size: 20px;
 	}
-	.platinum-row>img,.gold-row>img,.silver-row>img{
-		width: 230px;
+	.description-rule{
+		top: 400px;
 	}
-	.description1-body p{
-		font-size: 15px;
+	.description-rule,.description-rule-body,.description-rule-slides{
+		min-height: 250px;
+		font-size: 14px;
 	}
-	
-	
 }

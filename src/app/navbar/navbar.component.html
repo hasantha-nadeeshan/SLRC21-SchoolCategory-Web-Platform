@@ -1,37 +1,41 @@
-<nav class="navbar navbar-expand navbar-light bg-info " id="navbar-container">
+<nav class="navbar navbar-expand-sm navbar-dark fixed-top scrolling-navbar" id="navbar-container">
+
     <div class="container">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <nav>
-                    <a class="nav-link" href="#"  routerLink="" routerLinkActive="active">Home</a>
-                    </nav>
+
+        <!-- Navbar brand -->
+        <a class="navbar-brand" id="navbrand" href="#home">
+            <img src="/assets/logoslrc_white.png" width="100" height="50" class="d-inline-block align-top" alt="">
+        </a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+
+            <!-- Links -->
+            <ul class="navbar-nav ml-auto smooth-scroll">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <nav>
-                    <a class="nav-link" href="#description1">About</a></nav>
+                    <a class="nav-link" href="#about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#timeline">Timeline</a>
+                    <a class="nav-link" href="#">Workshops</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Workshops
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="#">Webot 2021a</a>
-                      <a class="dropdown-item" href="#">ThinckerCAD</a>
-                    </div>
-                  </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#footer">Contact</a>
+                    <a class="nav-link" href="#timeline-box">Timeline</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
                 </li>
             </ul>
+            <!-- Links -->
         </div>
+        <!-- Collapsible content -->
     </div>
 </nav>
-<a href="#home">
-	<div class="logo">
-		<img src="assets/logoslrc.png" >
-	</div>
-</a>
