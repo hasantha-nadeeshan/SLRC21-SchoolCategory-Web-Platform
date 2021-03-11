@@ -15,8 +15,7 @@ export class NavbarComponent implements OnInit {
   pageTopPos = window.pageYOffset;
   
   scroll=window.onscroll=()=> {
-    let currentScrollPos = window.pageYOffset;
-    console.log(this.pageTopPos);
+    let currentScrollPos = window.pageYOffset
     if (this.pageTopPos = currentScrollPos) {
       document.getElementById("navbar-container").style.backgroundColor="rgba(0,0,0,0.4)";
       document.getElementById("navbrand").style.display="block";
@@ -24,10 +23,10 @@ export class NavbarComponent implements OnInit {
      //document.getElementById("navbar-container").style.top = "0";
     } 
     else {
-      document.getElementById("navbar-container").style.backgroundColor="transparent";
+      document.getElementById("navbar-container").style.backgroundColor="rgba(0,0,0,0.1)";
       document.getElementById("navbrand").style.display="none";
       if(currentScrollPos>0 && this.prevScrollpos>0){
-        document.getElementById("navbar-container").style.backgroundColor="transparent";
+        document.getElementById("navbar-container").style.backgroundColor="rgba(0,0,0,0.1)";
         document.getElementById("navbrand").style.display="none";
         //document.getElementById("navbar-container").style.top = "-70px";
     }

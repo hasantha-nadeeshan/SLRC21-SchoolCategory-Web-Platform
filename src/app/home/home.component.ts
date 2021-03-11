@@ -15,12 +15,12 @@ export class HomeComponent implements OnInit {
 this.scrollWindow();
     
   }
-  launcheDate = new Date('Mar 14, 2021 00:00:00').getTime();
+  launcheDate = new Date().getTime();  //deadline
   days=0;
   hours=0;
   mins=0;
   seconds=0;
-  intvl = setInterval(()=>{
+  /*intvl = setInterval(()=>{
     //Get today date and time in mili sec
     const now = new Date().getTime();
     //Distance
@@ -35,7 +35,7 @@ this.scrollWindow();
       document.getElementById("demo").innerHTML= 'Expeired';
     }
   },1000);
-  
+*/
  
   
 }

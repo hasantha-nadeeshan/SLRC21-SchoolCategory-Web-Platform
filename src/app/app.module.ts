@@ -13,6 +13,7 @@ import { OverallProgressComponent } from './overall-progress/overall-progress.co
 import { SlrcHrTimelineComponent } from './slrc-hr-timeline/slrc-hr-timeline.component';
 import { SvgTimelineComponent } from './svg-timeline/svg-timeline.component';
 import { SponsorsBannersComponent } from './sponsors-banners/sponsors-banners.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SponsorsBannersComponent } from './sponsors-banners/sponsors-banners.co
     OverallProgressComponent,
     SlrcHrTimelineComponent,
     SvgTimelineComponent,
-    SponsorsBannersComponent
+    SponsorsBannersComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
