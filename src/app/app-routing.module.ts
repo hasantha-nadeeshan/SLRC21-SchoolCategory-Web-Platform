@@ -25,7 +25,7 @@ const routes: Routes = [
   },
   {
     path:'question',
-    component:TaskPageComponent
+    component:TaskPageComponent,canActivate: [AuthGuard]
   }
 ];
 
