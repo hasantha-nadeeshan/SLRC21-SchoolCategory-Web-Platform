@@ -4,14 +4,28 @@ import { from } from 'rxjs';
 import { HomeComponent } from './home/home.component';
 import {EasyTasksComponent} from './easy-tasks/easy-tasks.component'
 import {TaskPageComponent} from './task-page/task-page.component'
+import { SignInComponent } from './sign-in/sign-in.component';
+import { AuthGuard } from './shared/guard/auth.guard';
 const routes: Routes = [
   {
-    path:'',
-    component: EasyTasksComponent
+    path: '', 
+    redirectTo: 'home', pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: 'signIn',
+    component: SignInComponent
+  },
+  {
+    path:'easyTask',
+    component: EasyTasksComponent,canActivate: [AuthGuard]
   },
   {
     path:'question',
-    component:TaskPageComponent
+    component:TaskPageComponent,canActivate: [AuthGuard]
   }
 ];
 

@@ -14,6 +14,10 @@ import { SlrcHrTimelineComponent } from './slrc-hr-timeline/slrc-hr-timeline.com
 import { SvgTimelineComponent } from './svg-timeline/svg-timeline.component';
 import { SponsorsBannersComponent } from './sponsors-banners/sponsors-banners.component';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { FirebaseService } from './services/firebase.service';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -27,14 +31,16 @@ import { SpinnerComponent } from './spinner/spinner.component';
     SlrcHrTimelineComponent,
     SvgTimelineComponent,
     SponsorsBannersComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

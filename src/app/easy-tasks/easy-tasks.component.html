@@ -9,7 +9,7 @@
             <p class="card-text">Short description about task</p>
             <div class="row">
               <div class="col">
-                <button type="button" (click)="onClickMe('1','Easy')" class="btn btn-primary" routerLink="question" routerLinkActive="active" routerLink="question" routerLinkActive="active">Solve Challenge</button>
+                <button type="button" (click)="onClickMe('1','Easy')" class="btn btn-primary"  routerLinkActive="active" routerLink="question" >Solve Challenge</button>
               </div>
               <div class="col" style="text-align: right;">
                 Level: <span style="color: green;">Easy</span><br>
@@ -125,3 +125,8 @@
         </div>
     </div>
 </div>
+<!-- <a class="nav-link" (click)="authService.SignOut()">
+  Log out
+</a> -->
+<button (click)="authService.SignOut()" >Sign Out
+</button>
