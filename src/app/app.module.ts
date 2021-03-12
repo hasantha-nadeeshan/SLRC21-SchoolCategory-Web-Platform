@@ -13,6 +13,7 @@ import { OverallProgressComponent } from './overall-progress/overall-progress.co
 import { SlrcHrTimelineComponent } from './slrc-hr-timeline/slrc-hr-timeline.component';
 import { SvgTimelineComponent } from './svg-timeline/svg-timeline.component';
 import { SponsorsBannersComponent } from './sponsors-banners/sponsors-banners.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 import { FirebaseService } from './services/firebase.service';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
@@ -30,6 +31,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
     SlrcHrTimelineComponent,
     SvgTimelineComponent,
     SponsorsBannersComponent,
+    SpinnerComponent,
     SignInComponent
   ],
   imports: [

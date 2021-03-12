@@ -1,3 +1,7 @@
+.navbar-nav{
+  font-size: 20px;
+
+}
 .navbar-brand img{
 	margin-top: 10px;
 }
@@ -7,9 +11,18 @@
 .top-nav-collapse {
     background-color:transparent;
   }
+  @media (max-width: 567px) {
+    .navbar-nav{
+      background-color:rgba(0,0 ,0, 0.9);
+    }
+  }
   @media (max-width: 767px) {
     .navbar:not(.top-nav-collapse) {
       background-color:transparent;
+    }
+    
+    .nav-link{
+      padding-left: 20px;
     }
   }
   

@@ -25,7 +25,7 @@
 	height: 100vh;
 	position: relative;
 	width: 100vw;
-	background: url("/assets/fifth-back.jpg")no-repeat center center fixed;
+	background: url("/assets/fourth-back.jpg")no-repeat center center fixed;
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -44,10 +44,10 @@
 	
 }
 .countdownbox div{
-	width: 40px;
+	width: 50px;
+	height: 50px;
 	padding: 3px;
-	border: 1px solid white;
-	border-radius: 5px;
+	border-radius: 50%;
 	margin: 7px;
 	background: black;
 	opacity: 0.7;
@@ -55,9 +55,6 @@
 .countdownbox span{
 	display: block;
 	font-size: 8px;
-}
-.countdownbox div:first-child{
-	background: #17a2b8;
 }
 .regbutton{
 	width: 90px;
@@ -110,6 +107,7 @@
     height: 100px;  
 }
 .UOM-logo img,.ENTC-logo img,.ECLUB-logo img{
+	margin-bottom: 3px;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -123,8 +121,6 @@
 	width: 50px;
 	height: 50px;
 }
-
-
 .sponsor-row1{
 	display: flex;
 	height: 250px;
@@ -132,6 +128,7 @@
 	top: 10px;
 	background-color: rgba(5,3,25,0.4);
 }
+
 .description-slrc,.description-competition,.description-rule,.timeline-body{
     display: block;
     position: absolute;
@@ -151,19 +148,68 @@
 .timeline-body{
 	top: 320px;
 }
-.description-slrc-slides,.description-competition-slides,.description-rule-slides{
+.description-slrc-slides{
     display: none;
 	height: inherit;
-	background: url("/assets/slrc_2019-img1.jpg")no-repeat center center fixed;
+	background: url("/assets/slrc_2019-img1.jpg")no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 }
-.description-slrc-body,.description-competition-body,.description-rule-body{
+.description-competition-slides{
+	display: none;
+	height: inherit;
+	background: url("/assets/slrc_2019_school.jpg")no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.description-rule-slides{
+	display: none;
+	height: inherit;
+	background: url("/assets/slrc_2019_workshops.jpg")no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.description-slrc-body,.description-competition-body{
+	padding-top: 15px  !important;
+	padding-bottom: 10px;
     display: block;
 }
+.description-rule-body{
+	padding-top: 5px !important;
+	
+	display: block;
+}
+
+.silver,.gold,.plat{
+	display: none;
+}
+.platinum-row2{
+	margin-bottom: 3px;
+	width: 250px;
+	height: inherit;
+	border: 2px solid white;
+}
+.gold-row2{
+	margin-bottom: 3px;
+	width: 300px;
+	height: inherit;
+	border: 2px solid gold;
+}
+.silver-row2{
+	margin-bottom: 3px;
+	width: 350px;
+	height: inherit;
+	border: 2px solid silver;
+}
+
 @media screen and (min-width: 576px) {
+
 	.logo-box{
 		bottom: 10px;
 	}
@@ -177,6 +223,15 @@
 	.timeline-body{
 		top: 340px;
 	}
+	.platinum-row2{
+		width: 350px;
+	}
+	.gold-row2{
+		width: 400px;
+	}
+	.silver-row2{
+		width: 450px;
+	}
 }
 @media screen and (min-width: 720px) {
 	
@@ -186,6 +241,12 @@
 		top: 30px;
 		background-color: rgba(5,3,25,0.4);
 		padding-top: 30px;
+	}
+	.silver,.gold,.plat{
+		display: block;
+	}
+	.sponsor-row2{
+		display: none;
 	}
 	.silver1,.silver2{
 		width: 80px;
@@ -235,11 +296,9 @@
 		top: 310px;
 	}
 	.countdownbox div{
-		width: 70px;
+		width: 85px;
+		height: 85px;
 		padding: 3px;
-		border: 2px solid white;
-		border-radius: 12px;
-		margin: 10px;
 	}
 	.countdownbox span{
 		font-size: 15px;
@@ -289,6 +348,10 @@
 	.timeline-body{
 		top: 360px;
 	}
+	.description-rule-body{
+		padding-top: 8px;
+	
+	}
 	
 }
 @media screen and (min-width: 1000px) {
@@ -299,10 +362,9 @@
 		font-size: 40px;
 	}
 	.countdownbox div{
-		width: 80px;
+		width: 100px;
+		height: 100px;
 		padding: 4px;
-		border: 2px solid white;
-		border-radius: 15px;
 		margin: 10px;
 	}
 	.silver1,.silver2{
@@ -344,4 +406,5 @@
 		min-height: 250px;
 		font-size: 14px;
 	}
+	
 }

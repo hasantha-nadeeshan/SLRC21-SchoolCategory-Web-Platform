@@ -1,26 +1,26 @@
-section {
+#timeline {
   font-family: "Source Sans Pro", Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.75;
 
 }
-h3{
+#timeline h3{
   color: white;
   text-align: center;
-
 }
+
 #timeline {
   display: flex;
   background-color: #031625;
 }
 #timeline:hover .tl-item {
-  width: 23.3333vw;
+  width: 23.333vw;
 }
 
 .tl-item {
   transform: translate3d(0, 0, 0);
   position: relative;
-  width: 25vw;
+  width: 24.5vw;
   height: 20vh;
   min-height: 200px;
   color: #fff;
@@ -54,11 +54,7 @@ h3{
 .tl-item:hover:after {
   opacity: 0;
 }
-.tl-item:hover:before {
-  opacity: 1;
-  transform: translate3d(0, 0, 0) translateY(0);
-  transition: opacity 1s ease, transform 1s ease 0.25s;
-}
+
 .tl-item:hover .tl-content {
   opacity: 1;
   transform: translateY(0);
