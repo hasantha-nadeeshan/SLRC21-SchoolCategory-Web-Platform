@@ -30,6 +30,7 @@ for j in data:
     for i in datakeys:
         temp.append(j[i])
     userData.append(temp)
-
+print(len(data))
+print(len(userData))
 sheet.insert_rows(userData)
 

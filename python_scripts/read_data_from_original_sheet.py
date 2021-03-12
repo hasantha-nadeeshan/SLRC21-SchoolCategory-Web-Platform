@@ -31,5 +31,5 @@ for team in records_data:
         user_data.append(team)
 
 with open('data.json', 'w') as f:
-    json.dump(records_data, f)
+    json.dump(user_data, f)
 print(len(user_data))
