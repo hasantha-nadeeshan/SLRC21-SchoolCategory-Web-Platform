@@ -8,12 +8,18 @@
 #navbrand{
   display: none;
 }
+#logout{
+  display: none;
+}
 .top-nav-collapse {
     background-color:transparent;
   }
   @media (max-width: 567px) {
     .navbar-nav{
       background-color:rgba(0,0 ,0, 0.9);
+    }
+    #logout{
+      display: block;
     }
   }
   @media (max-width: 767px) {

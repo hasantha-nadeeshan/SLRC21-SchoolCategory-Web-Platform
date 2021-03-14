@@ -1,8 +1,9 @@
 
 <app-overall-progress></app-overall-progress>
-<hr>
-<div class="row">
-    <div class="col-md-4">
+<section>
+<div class="container easy-box">
+<div class="row ">
+    <div class="col-sm-12 col-12">
       <div class="card">
         <div class="card-body">
             <h5 class="card-title">Easy Task-1</h5>
@@ -22,14 +23,14 @@
         </div>
     </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-sm-12 col-12">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Easy Task-2</h5>
           <p class="card-text">Short description about task</p>
           <div class="row">
             <div class="col">
-              <button type="button" (click)="onClickMe('2','Easy')" class="btn btn-primary" routerLink="question" routerLinkActive="active">Solve Challenge</button>
+              <button type="button" (click)="onClickMe('2','Easy')" class="btn btn-primary" routerLink="/question" routerLinkActive="active">Solve Challenge</button>
             </div>
             <div class="col" style="text-align: right;">
               Level: <span style="color: green;">Easy</span><br>
@@ -42,14 +43,14 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-sm-12 col-12">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Easy Task-3</h5>
             <p class="card-text">Short description about task</p>
             <div class="row">
               <div class="col">
-                <button type="button" (click)="onClickMe('3','Easy')" class="btn btn-primary" routerLink="question" routerLinkActive="active">Solve Challenge</button>
+                <button type="button" (click)="onClickMe('3','Easy')" class="btn btn-primary" routerLink="/question" routerLinkActive="active">Solve Challenge</button>
               </div>
               <div class="col" style="text-align: right;">
                 Level: <span style="color: green;">Easy</span><br>
@@ -64,14 +65,14 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-sm-12 col-12">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Easy Task-4</h5>
           <p class="card-text">Short description about task</p>
           <div class="row">
             <div class="col">
-              <button type="button" (click)="onClickMe('4','Easy')" class="btn btn-primary" routerLink="question" routerLinkActive="active">Solve Challenge</button>
+              <button type="button" (click)="onClickMe('4','Easy')" class="btn btn-primary" routerLink="/question" routerLinkActive="active">Solve Challenge</button>
             </div>
             <div class="col" style="text-align: right;">
               Level: <span style="color: green;">Easy</span><br>
@@ -84,14 +85,14 @@
         </div>
     </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-sm-12 col-12">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Easy Task-5</h5>
           <p class="card-text">Short description about task</p>
           <div class="row">
             <div class="col">
-              <button type="button" (click)="onClickMe('5','Easy')" class="btn btn-primary" routerLink="question" routerLinkActive="active">Solve Challenge</button>
+              <button type="button" (click)="onClickMe('5','Easy')" class="btn btn-primary" routerLink="/question" routerLinkActive="active">Solve Challenge</button>
             </div>
             <div class="col" style="text-align: right;">
               Level: <span style="color: green;">Easy</span><br>
@@ -104,14 +105,14 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-sm-12 col-12">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Easy Task-6</h5>
             <p class="card-text">Short description about task</p>
             <div class="row">
               <div class="col">
-                <button type="button" (click)="onClickMe('6','Easy')" class="btn btn-primary" routerLink="question" routerLinkActive="active">Solve Challenge</button>
+                <button type="button" (click)="onClickMe('6','Easy')" class="btn btn-primary" routerLink="/question" routerLinkActive="active">Solve Challenge</button>
               </div>
               <div class="col" style="text-align: right;">
                 Level: <span style="color: green;">Easy</span><br>
@@ -125,8 +126,9 @@
         </div>
     </div>
 </div>
+</div>
+</section>
 <!-- <a class="nav-link" (click)="authService.SignOut()">
   Log out
 </a> -->
-<button (click)="authService.SignOut()" >Sign Out
-</button>
+

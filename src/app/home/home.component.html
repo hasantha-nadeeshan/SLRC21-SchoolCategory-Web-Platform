@@ -11,11 +11,18 @@
 				<div class="min">{{mins}} <span>Minutes</span></div>
 				<div class="sec">{{seconds}} <span>Seconds</span></div>
 			</div>
-
+		<div id="logincomponent">
+			<app-sign-in></app-sign-in>
+		</div>
 		<!--Rgesitration button-->
 		<div class="regbutton">
-			<a href="https://docs.google.com/forms/d/e/1FAIpQLScym4Gt4QPGOFDL6Oz-qSEVqNQEwMeP4vv_dLc4aWup0l54iQ/viewform?usp=sf_link" target="blank"><button class="reg-btn" type="button"><span></span>Register Now</button></a>
+			<a href="https://docs.google.com/forms/d/e/1FAIpQLScym4Gt4QPGOFDL6Oz-qSEVqNQEwMeP4vv_dLc4aWup0l54iQ/viewform?usp=sf_link" target="blank"><button class="reg-btn" type="button"><span></span>Register Now (University)</button></a>
 		</div>
+		<!-- login button -->
+		<div class="logbutton">
+			<button class="reg-btn" type="button" (click)="displayLogIN()"   ><span></span>Login Now (School)</button>
+		</div>
+
 			<!--Social media-->
 			<div class="social-media mr-auto">
 				<ul class="list-unstyled quick-links">
