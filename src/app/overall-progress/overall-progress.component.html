@@ -1,11 +1,23 @@
-<div class="container col-12">
-    <div class="row">
-      <div class="col-4 col-sm-4 col-md-4 team-details">
-        team details
-      </div>
-      <div class="col-4 col-sm-4 col-md-4"></div>
-      <div class="col-4 col-sm-4 col-md-4 current-state">
-        cuurent ranking
-      </div>
-    </div>
+<section id="progress-box">
+  <div id="logo">
+    <img src="assets/logoslrc_white.png">
   </div>
+  <div class="container progress-body">
+    <div class=" row">
+          <div class=" col-sm-6 col-md-6 team-details">
+            <h5>Team Name</h5>
+            <div class="progress" style="height: 10px;">
+              <div class="progress-bar" id="pro" role="progressbar"  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p>Rank    Score</p>
+          </div>
+          <div class=" col-sm-6 col-md-6 current-state">
+            <p>Remaining Time<br>Questions Attemped</p>
+            <button (click)="authService.SignOut()" >
+              <i class="fas fa-sign-out-alt"></i>Log Out
+            </button>
+          </div>
+  
+      </div>
+  </div>
+</section>

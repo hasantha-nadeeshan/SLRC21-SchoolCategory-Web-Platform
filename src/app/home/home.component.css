@@ -63,6 +63,16 @@
 	font-size: 10px;
 	left: 10px;
 }
+.logbutton{
+	width: 90px;
+	position: absolute;
+	top: 300px;
+	font-size: 10px;
+	left: 110px;
+}
+#logincomponent{
+	display: none;
+}
 .reg-btn{
 	width: 100%;
 	padding: 7px;
@@ -283,12 +293,16 @@
 	
 	.regbutton{
 		width: 190px;
-		font-size: 20px;
 		top: 420px;
 		left: 30px;
 	}
+	.logbutton{
+		width: 190px;
+		top: 420px;
+		left: 230px;
+	}
 	.reg-btn{
-		font-size: 20px;
+		font-size: 19px;
 	}
 	.countdownbox{
 		left: 30px;
@@ -355,7 +369,7 @@
 	
 }
 @media screen and (min-width: 1000px) {
-	.regbutton{
+	.regbutton,.logbutton{
 		top: 440px;
 	}
 	.countdownbox{

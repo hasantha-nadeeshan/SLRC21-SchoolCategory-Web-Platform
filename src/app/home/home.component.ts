@@ -15,6 +15,9 @@ export class HomeComponent implements OnInit {
 this.scrollWindow();
     
   }
+  displayLogIN():void{
+    document.getElementById("logincomponent").style.display="block";
+  }
   launcheDate = new Date().getTime();  //deadline
   days=0;
   hours=0;
@@ -37,10 +40,9 @@ this.scrollWindow();
   },1000);
 */
  
+
   
 }
-
-
 function scrollWindow() {
   throw new Error('Function not implemented.');
 }

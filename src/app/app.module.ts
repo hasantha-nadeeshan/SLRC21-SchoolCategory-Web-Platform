@@ -18,6 +18,9 @@ import { FirebaseService } from './services/firebase.service';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { TaskDescriptionComponent } from './task-description/task-description.component';
+import{AngularFireStorageModule} from '@angular/fire/storage'
+
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
     SvgTimelineComponent,
     SponsorsBannersComponent,
     SpinnerComponent,
-    SignInComponent
+    SignInComponent,
+    TaskDescriptionComponent
   ],
   imports: [
     BrowserModule,
