@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { from } from 'rxjs';
 import { HomeComponent } from './home/home.component';
 import {EasyTasksComponent} from './easy-tasks/easy-tasks.component'
 import {TaskPageComponent} from './task-page/task-page.component'
