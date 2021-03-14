@@ -1,5 +1,6 @@
 import { Component,OnInit} from '@angular/core';
-import  * as AOS from 'aos';
+import * as AOS from 'aos';
+
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,7 @@ import  * as AOS from 'aos';
 })
 export class AppComponent {
   title = 'SLRC21-SchoolCategory-Web-Platform';
+  path:string
   ngOnInit(){
     AOS.init();
   }

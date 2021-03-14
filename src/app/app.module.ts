@@ -18,6 +18,8 @@ import { FirebaseService } from './services/firebase.service';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { SubmissionComponent } from './submission/submission.component';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
     SvgTimelineComponent,
     SponsorsBannersComponent,
     SpinnerComponent,
-    SignInComponent
+    SignInComponent,
+    SubmissionComponent,
   ],
   imports: [
     BrowserModule,
