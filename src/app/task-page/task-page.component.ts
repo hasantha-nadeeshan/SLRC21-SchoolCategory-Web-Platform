@@ -1,20 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import{SharedService} from "../shared/shared.service"
+import { FirebaseService } from '../services/firebase.service';
 @Component({
   selector: 'app-task-page',
   templateUrl: './task-page.component.html',
   styleUrls: ['./task-page.component.css']
 })
 export class TaskPageComponent implements OnInit {
-  difficulty='';      //variable
+  difficulty='';
   taskNumber='';      //variable
-  constructor(private shared:SharedService) { }   //private constructor to use in this file
-
-  ngOnInit(): void {
-      }
-  
-  getData(){
+  constructor(
+    private shared:SharedService,
+    private uploadService: FirebaseService,) {
     this.shared.taskNumber$.subscribe(x=> this.taskNumber=x);       //subscribe to relavant topic which are set in shared.ts
     this.shared.difficulty$.subscribe(y=> this.difficulty=y);       //subscribing to relavant topic ehich are set in shared.ts
-  }
+    uploadService.readData("Task","task1").subscribe((doc:any)=>{
+      this.shared.setTaskNumber(doc.data().name);
+      console.log('new',doc.data().name);
+    });
+    this.difficulty=localStorage.getItem('difficulty');      //variable
+   }   //private constructor to use in this file
+
+  ngOnInit(): void {
+    
+      }
+  
+  
+   
 }

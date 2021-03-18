@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FirebaseService } from '../services/firebase.service';
 import{SharedService} from "../shared/shared.service"
 @Component({
   selector: 'app-easy-tasks',
@@ -7,17 +7,22 @@ import{SharedService} from "../shared/shared.service"
   styleUrls: ['./easy-tasks.component.css']
 })
 export class EasyTasksComponent implements OnInit {
+  
   constructor(
-    private shared : SharedService
+    private shared : SharedService,
+    private uploadService: FirebaseService,
     
-    ) { }   //private constructir to use in this file
+    ) {
+      
+     }   //private constructir to use in this file
   
   ngOnInit(): void {
   }
   
   onClickMe(tasknum: any,difficulty:any) {
-  this.shared.setTaskNumber(tasknum);           //set tasknumber to global
+ // this.shared.setTaskNumber(tasknum);           //set tasknumber to global
   this.shared.setDifficulty(difficulty);        //set difficulty level to global
+  localStorage.setItem('difficulty',difficulty);
   }
   
 }

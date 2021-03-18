@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../services/firebase.service';
+import{SharedService} from "../shared/shared.service"
 @Component({
   selector: 'app-overall-progress',
   templateUrl: './overall-progress.component.html',
@@ -8,13 +9,17 @@ import { FirebaseService } from '../services/firebase.service';
 export class OverallProgressComponent implements OnInit {
 
   constructor(
-    public authService: FirebaseService
+    public authService: FirebaseService,
+    private shared : SharedService
   ) { }
-
+    teamName='';
   ngOnInit(): void {
     this.probar();
+    this.shared.teamName$.subscribe(x=> this.teamName = x);
+
   }
   value=70;
+
   probar(){
     document.getElementById("pro").style.width=this.value+"%";
   }
