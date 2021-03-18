@@ -20,7 +20,6 @@ import { environment } from 'src/environments/environment';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SubmissionComponent } from './submission/submission.component';
 import { TaskDescriptionComponent } from './task-description/task-description.component';
-import{AngularFireStorageModule} from '@angular/fire/storage'
 
 
 @NgModule({
