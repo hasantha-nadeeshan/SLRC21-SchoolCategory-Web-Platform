@@ -23,7 +23,6 @@ export class FirebaseService {
 
   constructor(
     public firebaseAuth: AngularFireAuth,
-    public AngularFireStorage: AngularFireStorage,
     public router: Router,
     public ngZone: NgZone,
     private db: AngularFirestore,
@@ -60,10 +59,10 @@ export class FirebaseService {
     })
    }
   pushFileToStorage(fileUpload: FileUpload, task: string): Observable<number> {
-     const filePath = `${this.basePath}/${this.userData.uid}/${task}/${fileUpload.file.name}`;
+    const filePath = `${this.basePath}/${this.userData.uid}/${task}/${fileUpload.file.name}`;
     const storageRef = this.storage.ref(filePath);
     this.shared.teamName$.subscribe(x => this.teamName = x);
-    console.log(this.teamName);
+    //console.log(this.teamName);
      let metadata = {
        uid: this.userData.uid,
        team: this.teamName,
@@ -100,12 +99,15 @@ export class FirebaseService {
     return (user !== null) ? true : false;
   }
 
-  async routeGuard(id:any){
+  routeGuard() {
     this.firebaseAuth.authState.subscribe(user => {
       if(!user){
-        this.router.navigate([id]);
+        //this.router.navigate([id]);
+        return true
       }
-    })
+      return false;
+       
+     })
   }
 
   SignOut(){
@@ -134,11 +136,17 @@ export class FirebaseService {
   }
 
   taskRequset() {
-    let dict: {data?:string}
-    const fun = this.functions.httpsCallable("sayHello");
-    fun({task:"task1"}).subscribe(data => {
-      console.log(data)
+    const fun = this.functions.httpsCallable("fireGetColors");
+    console.log(fun({}));
+    fun({}).subscribe((res: any) => {
+      
     });
 
+  }
+
+  public downloadLink() {
+    this.storage.storage.refFromURL('gs://slrc-school.appspot.com/Submission/Bymhw8vttmaidBhc7tIo5GP66Tc2/easy/clique wording-2.png').getDownloadURL().then(url => {
+      console.log(url);
+    })
   }
 }

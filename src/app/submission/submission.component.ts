@@ -24,7 +24,7 @@ export class SubmissionComponent implements OnInit {
   selectFile(event:any): void {
     this.selectedFiles = event.target.files;
   }
-  upload(task:any): void {
+  upload(): void {
     const file = this.selectedFiles.item(0);
     this.selectedFiles = undefined;
     this.currentFileUpload = new FileUpload(file);

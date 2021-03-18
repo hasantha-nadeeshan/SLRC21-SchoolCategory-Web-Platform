@@ -8,7 +8,8 @@ import{SharedService} from "../shared/shared.service"
 })
 export class EasyTasksComponent implements OnInit {
   constructor(
-    private shared : SharedService
+    private shared: SharedService
+    
     
     ) { }   //private constructir to use in this file
   
