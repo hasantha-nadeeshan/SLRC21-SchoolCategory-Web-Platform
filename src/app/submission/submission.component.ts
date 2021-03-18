@@ -28,8 +28,9 @@ export class SubmissionComponent implements OnInit {
     const file = this.selectedFiles.item(0);
     this.selectedFiles = undefined;
     this.currentFileUpload = new FileUpload(file);
+  
     //this.uploadService.upload();
-    this.shared.taskNumber$.subscribe(x=> this.taskNumber=x);  
+    this.taskNumber = localStorage.getItem('taskno')
     this.uploadService.pushFileToStorage(this.currentFileUpload,this.taskNumber).subscribe(
       percentage => {
         this.percentage = Math.round(percentage);

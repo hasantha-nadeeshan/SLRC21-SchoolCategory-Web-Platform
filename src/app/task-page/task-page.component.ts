@@ -8,23 +8,27 @@ import { FirebaseService } from '../services/firebase.service';
 })
 export class TaskPageComponent implements OnInit {
   difficulty='';
-  taskNumber='';      //variable
+  taskNumber=''; 
+  description='';
+  maxScore = '';
+  
+  incomingData={};     //variable
   constructor(
     private shared:SharedService,
     private uploadService: FirebaseService,) {
-    this.shared.taskNumber$.subscribe(x=> this.taskNumber=x);       //subscribe to relavant topic which are set in shared.ts
-    this.shared.difficulty$.subscribe(y=> this.difficulty=y);       //subscribing to relavant topic ehich are set in shared.ts
-    uploadService.readData("Task","task1").subscribe((doc:any)=>{
-      this.shared.setTaskNumber(doc.data().name);
-      console.log('new',doc.data().name);
-    });
+      
     this.difficulty=localStorage.getItem('difficulty');      //variable
+    this.taskNumber=localStorage.getItem('taskno');
+   
+    this.uploadService.taskRequset(this.taskNumber).subscribe((res:any)=>{
+        this.description = res.description;
+        this.maxScore = res.maxScore;
+    });
+    console.log(this.incomingData);
    }   //private constructor to use in this file
 
   ngOnInit(): void {
-    this.shared.taskNumber$.subscribe(x=> this.taskNumber=x);       //subscribe to relavant topic which are set in shared.ts
-    this.shared.difficulty$.subscribe(y=> this.difficulty=y);       //subscribing to relavant topic ehich are set in shared.ts
-      }
+   }
   
   
           

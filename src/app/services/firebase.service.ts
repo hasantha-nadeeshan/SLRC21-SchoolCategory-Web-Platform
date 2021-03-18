@@ -136,12 +136,11 @@ export class FirebaseService {
     return this.db.collection(collection).doc(details).get();
   }
 
-  taskRequset() {
+  taskRequset(taskName:string) {
+    let result;
     const fun = this.functions.httpsCallable("fireGetColors");
-    console.log(fun({}));
-    fun({}).subscribe((res: any) => {
-      
-    });
+   // console.log(fun({}));
+    return fun({taskNum:taskName});
 
   }
 

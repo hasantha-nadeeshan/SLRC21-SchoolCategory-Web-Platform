@@ -7,7 +7,7 @@
             <ng-container ngbNavItem>
               <a ngbNavLink>Problem</a>
               <ng-template ngbNavContent>
-                <app-task-description></app-task-description>
+                {{description}}
               </ng-template>
             
             </ng-container>
@@ -39,9 +39,8 @@
             <div class="state-body" style="text-align: center;">
               <p>Task no: <span style="font-weight: bold;">{{taskNumber}}</span></p>
               <p>Difficulty  :  <span style="color: green; font-weight: bold;">{{difficulty}}</span></p>
-              <p>Max score :200</p>
+              <p>Max score :{{maxScore}}</p>
               <p>Score :<span></span></p>
-              <p>Status:<span></span></p>
             </div>
     </div>
   </div>

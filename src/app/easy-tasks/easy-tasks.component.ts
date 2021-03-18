@@ -21,8 +21,9 @@ export class EasyTasksComponent implements OnInit {
   
   onClickMe(tasknum: any,difficulty:any) {
  // this.shared.setTaskNumber(tasknum);           //set tasknumber to global
-  this.shared.setDifficulty(difficulty);        //set difficulty level to global
+  localStorage.setItem('taskno', tasknum);        //set difficulty level to global
   localStorage.setItem('difficulty',difficulty);
+
   }
   
 }
