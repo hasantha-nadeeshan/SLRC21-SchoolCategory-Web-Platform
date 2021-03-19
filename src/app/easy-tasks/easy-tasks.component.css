@@ -1,5 +1,11 @@
 section{
-    background-color: #333946;
+    
+    background: url("/assets/easy-back2.jpg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  
     padding-bottom: 20px;
 }
 .easy-box{

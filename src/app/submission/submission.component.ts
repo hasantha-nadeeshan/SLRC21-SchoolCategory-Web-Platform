@@ -11,14 +11,30 @@ export class SubmissionComponent implements OnInit {
   selectedFiles: FileList;
   currentFileUpload: FileUpload;
   percentage: number;
+  attempt:any;
+  taskNumber = '';
+
   constructor(
     private uploadService: FirebaseService,
     private shared:SharedService
-  ) { }
+  ) {
+    this.taskNumber = localStorage.getItem('taskno');
+    
+    this.uploadService.readData(`Users/${localStorage.getItem('uid')}/Submission`,this.taskNumber).subscribe((doc:any)=>{
+      if(!doc.exists){
+        this.attempt = 2;
+      }
+      else{
+        this.attempt = 2-doc.data().attempt;
+      }
+    
+     console.log(this.attempt);
+    });
+   }
 
   ngOnInit(): void {
   }
-  taskNumber = '';
+  
 
 
   selectFile(event:any): void {
@@ -30,7 +46,7 @@ export class SubmissionComponent implements OnInit {
     this.currentFileUpload = new FileUpload(file);
   
     //this.uploadService.upload();
-    this.taskNumber = localStorage.getItem('taskno')
+   
     this.uploadService.pushFileToStorage(this.currentFileUpload,this.taskNumber).subscribe(
       percentage => {
         this.percentage = Math.round(percentage);

@@ -50,6 +50,7 @@ export class FirebaseService {
       .then(result => {
         this.userData = result.user;
         localStorage.setItem('user', JSON.stringify(result.user));
+        localStorage.setItem('uid',this.userData.uid);
         this.SetUserData(result.user);
         this.ngZone.run(() => {
         this.router.navigate(['easyTask']);
@@ -122,9 +123,10 @@ export class FirebaseService {
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
   SetUserData(user: any) {
     this.shared.setUserID(user.uid);
-    this.readData(`/Users/{uid}/Data`, 'details').subscribe((doc: any) => {
+    this.readData(`Users`,`${user.uid}`).subscribe((doc: any) => {
       this.shared.setTeamName(doc.data().name);
-      console.log("sep",typeof(doc.data().name));
+      
+      localStorage.setItem('teamName',doc.data().name);
     });
     const userData: User = {
       uid: user.uid,

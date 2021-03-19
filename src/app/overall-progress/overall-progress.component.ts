@@ -7,15 +7,16 @@ import{SharedService} from "../shared/shared.service"
   styleUrls: ['./overall-progress.component.css']
 })
 export class OverallProgressComponent implements OnInit {
-
+  teamName='';
   constructor(
     public authService: FirebaseService,
     private shared : SharedService
-  ) { }
-    teamName='';
+  ) { 
+    this.teamName = localStorage.getItem('teamName');
+  }
+    
   ngOnInit(): void {
     this.probar();
-    this.shared.teamName$.subscribe(x=> this.teamName = x);
 
   }
   value=70;
