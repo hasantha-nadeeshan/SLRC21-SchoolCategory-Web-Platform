@@ -138,12 +138,13 @@ export class FirebaseService {
     return this.db.collection(collection).doc(details).get();
   }
 
-  taskRequset(taskName:string) {
-    let result;
-    const fun = this.functions.httpsCallable("fireGetColors");
-   // console.log(fun({}));
-    return fun({taskNum:taskName});
+  readMarks(){
+    return this.db.collection("Marks").valueChanges();
+  }
 
+  taskRequset(taskName:string) {
+    const fun = this.functions.httpsCallable("fireGetColors");
+    return fun({taskNum:taskName});
   }
 
   public downloadLink() {
