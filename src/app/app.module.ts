@@ -20,6 +20,8 @@ import { environment } from 'src/environments/environment';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SubmissionComponent } from './submission/submission.component';
 import { TaskDescriptionComponent } from './task-description/task-description.component';
+import { LeaderBoardComponent } from './leader-board/leader-board.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -37,13 +39,15 @@ import { TaskDescriptionComponent } from './task-description/task-description.co
     SpinnerComponent,
     SignInComponent,
     SubmissionComponent,
-    TaskDescriptionComponent
+    TaskDescriptionComponent,
+    LeaderBoardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    BrowserAnimationsModule
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent]
