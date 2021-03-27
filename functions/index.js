@@ -63,7 +63,7 @@ exports.downloads = functions.https.onCall((data, contex) => {
     
 });
 
-exports.taskRequest = functions.https.onCall((data, context) => {
+exports.fireGetColors = functions.https.onCall((data, context) => {
   const task = data.taskNum
   return new Promise((resolve, reject) => {
       var taskDetails = {};
