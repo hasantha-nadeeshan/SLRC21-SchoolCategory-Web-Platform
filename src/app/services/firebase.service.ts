@@ -166,7 +166,9 @@ export class FirebaseService {
   readData(collection:any,details:string){
     return this.db.collection(collection).doc(details).get();
   }
-  
+  readTime(collection:any,details:string){
+    return this.db.collection(collection).doc(details).valueChanges();
+  }
 
   readMarks(){
     return this.db.collection("Marks").valueChanges();

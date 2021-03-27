@@ -13,24 +13,31 @@ export class SubmissionComponent implements OnInit {
   percentage: number;
   attempt:any;
   taskNumber = '';
+  sub1Time:any;
+  sub2Time:any;
 
   constructor(
-    private uploadService: FirebaseService,
-    private shared:SharedService
+    private uploadService: FirebaseService
+    
   ) {
     this.taskNumber = localStorage.getItem('taskno');
     
     this.uploadService.readData(`Users/${localStorage.getItem('uid')}/Submission`,this.taskNumber).subscribe((doc:any)=>{
       if(!doc.exists){
         this.attempt = 2;
+        this.sub1Time="Not Submitted";
+        this.sub2Time="Not Submitted";
       }
       else{
         this.attempt = 2-doc.data().attempt;
+        this.sub1Time = doc.data().time;
+        this.sub2Time = doc.data().time2;
+
       }
     
      console.log(this.attempt);
     });
-   }
+    }
 
   ngOnInit(): void {
   }
@@ -56,7 +63,7 @@ upload():void{
       }
       
     );
-   this.attempt = this.attempt-1;
+    this.attempt = this.attempt-1;
    
   }
 

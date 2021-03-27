@@ -18,22 +18,19 @@ export class OverallProgressComponent implements OnInit {
       this.authService.readOverallScore(localStorage.getItem('teamName')).subscribe((doc:any) =>{
         console.log(doc);
         this.overallScore = doc.Overall_Score;
+        document.getElementById("pro").style.width=this.overallScore+"%";
       });
     });
+    
     
   }
     
   ngOnInit(): void {
-    this.probar();
-    console.log(this.teamName,"kl");
     
-
   }
-  value=70;
+  
 
-  probar(){
-    document.getElementById("pro").style.width=this.value+"%";
-  }
+  
   prevScrollpos = window.pageYOffset;
   pageTopPos = window.pageYOffset;
   

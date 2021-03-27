@@ -1,0 +1,111 @@
+[debug] [2021-03-27T11:29:31.720Z] ----------------------------------------------------------------------
+[debug] [2021-03-27T11:29:31.722Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-03-27T11:29:31.723Z] CLI Version:   9.4.0
+[debug] [2021-03-27T11:29:31.723Z] Platform:      win32
+[debug] [2021-03-27T11:29:31.723Z] Node Version:  v15.0.1
+[debug] [2021-03-27T11:29:31.987Z] Time:          Sat Mar 27 2021 16:59:31 GMT+0530 (India Standard Time)
+[debug] [2021-03-27T11:29:31.987Z] ----------------------------------------------------------------------
+[debug] [2021-03-27T11:29:31.987Z] 
+[debug] [2021-03-27T11:29:32.029Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-03-27T11:29:32.029Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Web development course\SLRC21-SchoolCategory-Web-Platform
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  .firebaserc already has a default project, using slrc-school. 
+[debug] [2021-03-27T11:30:18.277Z] > refreshing access token with scopes: []
+[debug] [2021-03-27T11:30:18.278Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-03-27T11:30:18.763Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Sat, 27 Mar 2021 11:30:19 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-03-27T11:30:18.876Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/slrc-school [none]
+[debug] [2021-03-27T11:30:19.453Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/slrc-school 200
+[debug] [2021-03-27T11:30:19.453Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/slrc-school {"projectId":"slrc-school","projectNumber":"211600032105","displayName":"SLRC","name":"projects/slrc-school","resources":{"hostingSite":"slrc-school","storageBucket":"slrc-school.appspot.com","locationId":"us-central"},"state":"ACTIVE"}
+[info] 
+=== Firestore Setup
+[debug] [2021-03-27T11:30:19.455Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-03-27T11:30:19.455Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-03-27T11:30:19.748Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Sat, 27 Mar 2021 11:30:20 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-03-27T11:30:19.770Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/slrc-school/services/firestore.googleapis.com  
+ 
+[debug] [2021-03-27T11:30:21.526Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 27 Mar 2021 11:30:21 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-03-27T11:30:21.526Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/slrc-school  
+ 
+[debug] [2021-03-27T11:30:22.291Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 27 Mar 2021 11:30:22 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-03-27T11:30:22.291Z] database_type: CLOUD_FIRESTORE
+[debug] [2021-03-27T11:30:22.291Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-03-27T11:30:22.292Z] > authorizing via signed-in user
+[debug] [2021-03-27T11:30:22.292Z] [iam] checking project slrc-school for permissions ["firebase.projects.get"]
+[debug] [2021-03-27T11:30:22.292Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/slrc-school:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-03-27T11:30:23.575Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 27 Mar 2021 11:30:23 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1012","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2021-03-27T11:30:39.717Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/slrc-school/releases?pageSize=10&pageToken=  
+ 
+[debug] [2021-03-27T11:30:41.294Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 27 Mar 2021 11:30:41 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-03-27T11:30:41.295Z] Found ruleset: projects/slrc-school/rulesets/b191321d-c06a-4100-a3c8-d3ce608f2946
+[debug] [2021-03-27T11:30:41.295Z] >>> HTTP REQUEST GET https://firebaserules.googleapis.com/v1/projects/slrc-school/rulesets/b191321d-c06a-4100-a3c8-d3ce608f2946  
+ 
+[debug] [2021-03-27T11:30:42.728Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 27 Mar 2021 11:30:42 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2021-03-27T11:31:15.865Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1/projects/slrc-school/databases/(default)/collectionGroups/-/indexes  
+ 
+[debug] [2021-03-27T11:31:15.866Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1/projects/slrc-school/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false  
+ 
+[debug] [2021-03-27T11:31:17.367Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 27 Mar 2021 11:31:17 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-03-27T11:31:17.382Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 27 Mar 2021 11:31:17 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+=== Functions Setup
+[info] 
+[info] A functions directory will be created in your project with a Node.js
+[info] package pre-configured. Functions can be deployed with firebase deploy.
+[info] 
+[debug] [2021-03-27T11:31:17.386Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-03-27T11:31:17.387Z] > authorizing via signed-in user
+[debug] [2021-03-27T11:31:17.387Z] [iam] checking project slrc-school for permissions ["firebase.projects.get"]
+[debug] [2021-03-27T11:31:17.387Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/slrc-school:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2021-03-27T11:31:18.656Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 27 Mar 2021 11:31:18 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1011","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-03-27T11:31:18.657Z] >>> HTTP REQUEST POST https://serviceusage.googleapis.com/v1/projects/slrc-school/services/cloudfunctions.googleapis.com:enable  
+ 
+[debug] [2021-03-27T11:31:18.658Z] >>> HTTP REQUEST POST https://serviceusage.googleapis.com/v1/projects/slrc-school/services/runtimeconfig.googleapis.com:enable  
+ 
+[debug] [2021-03-27T11:31:20.149Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 27 Mar 2021 11:31:20 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-03-27T11:31:20.254Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 27 Mar 2021 11:31:20 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] +  Wrote functions/package.json 
+[info] i  Skipping write of functions/index.js 
+[info] i  Skipping write of functions/.gitignore 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
