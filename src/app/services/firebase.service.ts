@@ -1,3 +1,4 @@
+import { element } from 'protractor';
 import { Injectable, NgZone } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth'
 import { Router } from '@angular/router';
@@ -9,6 +10,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { SharedService } from '../shared/shared.service';
+import  *  as  data  from  'python_scripts/data.json';
 
 @Injectable({
   providedIn: 'root'
@@ -28,21 +30,21 @@ export class FirebaseService {
     private db: AngularFirestore,
     private storage: AngularFireStorage,
     private functions: AngularFireFunctions,
-    private shared : SharedService
+    private shared: SharedService,
     
 
   ) { 
-    this.firebaseAuth.authState.subscribe(user =>{
-      if(user){
-        this.userData = user;
-        localStorage.setItem('user', JSON.stringify(this.userData));
-        JSON.parse(localStorage.getItem('user'));
-        this.SetUserData(this.userData);
-      }else{
-        localStorage.setItem('user', null);
-        JSON.parse(localStorage.getItem('user'));
-      }
-    })
+    // this.firebaseAuth.authState.subscribe(user =>{
+    //   if(user){
+    //     this.userData = user;
+    //     localStorage.setItem('user', JSON.stringify(this.userData));
+    //     JSON.parse(localStorage.getItem('user'));
+    //     this.SetUserData(this.userData);
+    //   }else{
+    //     localStorage.setItem('user', null);
+    //     JSON.parse(localStorage.getItem('user'));
+    //   }
+    // })
     
    }
    async SignIn(email:string,password:string){
@@ -50,7 +52,7 @@ export class FirebaseService {
       .then(result => {
         this.userData = result.user;
         localStorage.setItem('user', JSON.stringify(result.user));
-        this.SetUserData(result.user);
+        //this.SetUserData(result.user);
         this.ngZone.run(() => {
         this.router.navigate(['easyTask']);
       });
@@ -59,6 +61,33 @@ export class FirebaseService {
       window.alert(error.message)
     })
    }
+
+  async createUser() {
+    let products = (data as any).default;
+    let no = 0
+    for (var val of products) {
+      no++;
+      let name = val["team_name"].replace(/\s/g, "").toLowerCase();
+      let username = name + '@slrc.com';
+      let paswwd = val["password"];
+      console.log(no);
+      await this.firebaseAuth.createUserWithEmailAndPassword(username, paswwd).then(result => {
+          console.log(username,no);
+          console.log(result.user.uid);
+          this.db.collection(`Users`).doc(`${result.user.uid}`).set({
+            rank: 0,
+            overallScore: 0,
+            teamName: val["team_name"]
+          })
+      });       
+    }
+
+
+  
+  }
+  
+  
+  
   pushFileToStorage(fileUpload: FileUpload, task: string): Observable<number> {
     const filePath = `${this.basePath}/${this.userData.uid}/${task}/${fileUpload.file.name}`;
     const storageRef = this.storage.ref(filePath);
@@ -122,7 +151,7 @@ export class FirebaseService {
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
   SetUserData(user: any) {
     this.shared.setUserID(user.uid);
-    this.readData(`/Users/{uid}/Data`, 'details').subscribe((doc: any) => {
+    this.readData(`Users`, `${user.uid}`).subscribe((doc: any) => {
       this.shared.setTeamName(doc.data().name);
       console.log("sep",typeof(doc.data().name));
     });
@@ -135,13 +164,14 @@ export class FirebaseService {
   readData(collection:any,details:string){
     return this.db.collection(collection).doc(details).get();
   }
+  
 
   readMarks(){
     return this.db.collection("Marks").valueChanges();
   }
 
   taskRequset(taskName:string) {
-    const fun = this.functions.httpsCallable("fireGetColors");
+    const fun = this.functions.httpsCallable("taskRe");
     return fun({taskNum:taskName});
   }
 
