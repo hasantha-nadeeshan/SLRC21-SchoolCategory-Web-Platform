@@ -37,19 +37,6 @@ export class FirebaseService {
     
 
   ) { 
-<<<<<<< HEAD
-    // this.firebaseAuth.authState.subscribe(user =>{
-    //   if(user){
-    //     this.userData = user;
-    //     localStorage.setItem('user', JSON.stringify(this.userData));
-    //     JSON.parse(localStorage.getItem('user'));
-    //     this.SetUserData(this.userData);
-    //   }else{
-    //     localStorage.setItem('user', null);
-    //     JSON.parse(localStorage.getItem('user'));
-    //   }
-    // })
-=======
     this.firebaseAuth.authState.subscribe(user =>{
       if(user){
         this.userData = user;
@@ -61,7 +48,6 @@ export class FirebaseService {
         JSON.parse(localStorage.getItem('user'));
       }
     })
->>>>>>> 3120508a00f4a77f5b7e86d573777b6be2a7c272
     
    }
    async SignIn(email:string,password:string){
@@ -69,12 +55,8 @@ export class FirebaseService {
       .then(result => {
         this.userData = result.user;
         localStorage.setItem('user', JSON.stringify(result.user));
-<<<<<<< HEAD
-        //this.SetUserData(result.user);
-=======
         localStorage.setItem('uid',this.userData.uid);
         
->>>>>>> 3120508a00f4a77f5b7e86d573777b6be2a7c272
         this.ngZone.run(() => {
         this.router.navigate(['easyTask']);
       });
