@@ -40,7 +40,7 @@ export class SubmissionComponent implements OnInit {
   selectFile(event:any): void {
     this.selectedFiles = event.target.files;
   }
-  upload(): void {
+upload():void{
     const file = this.selectedFiles.item(0);
     this.selectedFiles = undefined;
     this.currentFileUpload = new FileUpload(file);
@@ -54,7 +54,10 @@ export class SubmissionComponent implements OnInit {
       error => {
         console.log(error);
       }
+      
     );
+   this.attempt = this.attempt-1;
+   
   }
 
 

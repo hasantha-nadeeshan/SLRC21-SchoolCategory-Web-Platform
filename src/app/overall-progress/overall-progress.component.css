@@ -25,11 +25,11 @@
     height: 70px;
 }
 .team-details{
-    font-size: 10px;
+    font-size: 12px;
     padding-top: 7px;
     z-index: 2;
     display: block;
-    height:80px;
+    height:70px;
 }
 button{
     color: white;

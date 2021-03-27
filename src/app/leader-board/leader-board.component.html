@@ -1,5 +1,18 @@
-<ul *ngFor="let post of posts  | async">
-    <li><strong></strong>
-        <strong>{{post.team_name}}  {{post[1]}}</strong>
-    </li>
-</ul>
+<section>
+    
+    <div class="container leader-box">
+        <table class="task1-table" cellpadding="15">
+            <thead>
+                <th>Rank</th>
+                <th>Team Name</th>
+                <th>Points</th>
+            </thead>
+            <tr *ngFor="let post of posts  | async; let i = index">
+                <td class="rank">{{i+1}}</td>
+                <td>{{post.team_name}}</td>
+                <td class="points">{{post[taskNum]}} pts</td>
+            </tr> 
+        </table>
+    </div>
+</section>
+

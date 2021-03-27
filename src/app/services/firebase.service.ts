@@ -10,6 +10,9 @@ import { Observable } from 'rxjs';
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { SharedService } from '../shared/shared.service';
 
+declare var require:any;
+const FileSaver = require('file-saver');
+
 @Injectable({
   providedIn: 'root'
 })
@@ -37,7 +40,7 @@ export class FirebaseService {
         this.userData = user;
         localStorage.setItem('user', JSON.stringify(this.userData));
         JSON.parse(localStorage.getItem('user'));
-        this.SetUserData(this.userData);
+        this.SetUserData(this.userData.uid);
       }else{
         localStorage.setItem('user', null);
         JSON.parse(localStorage.getItem('user'));
@@ -51,7 +54,7 @@ export class FirebaseService {
         this.userData = result.user;
         localStorage.setItem('user', JSON.stringify(result.user));
         localStorage.setItem('uid',this.userData.uid);
-        this.SetUserData(result.user);
+        
         this.ngZone.run(() => {
         this.router.navigate(['easyTask']);
       });
@@ -59,6 +62,7 @@ export class FirebaseService {
     }).catch((error)=>{
       window.alert(error.message)
     })
+    this.SetUserData(this.userData.uid);
    }
   pushFileToStorage(fileUpload: FileUpload, task: string): Observable<number> {
     const filePath = `${this.basePath}/${this.userData.uid}/${task}/${fileUpload.file.name}`;
@@ -79,9 +83,6 @@ export class FirebaseService {
         storageRef.getDownloadURL().subscribe(downloadURL => {
           fileUpload.url = downloadURL;
           fileUpload.name = fileUpload.file.name;
-          //this.shared.userId$.subscribe(x => this.uid = x);
-          //this.readData(this.uid,)
-          //this.saveFileData(fileUpload,task);
         });
       })
     ).subscribe();
@@ -89,12 +90,7 @@ export class FirebaseService {
     return uploadTask.percentageChanges();
    }
   
-   private saveFileData(fileUpload: FileUpload,task: string){
-     return this.db.collection(`Submissions`).doc(`${this.userData.uid}`).set({
-       task: "cat"
-      
-    })
-  }
+ 
 
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -115,24 +111,30 @@ export class FirebaseService {
   SignOut(){
     this.firebaseAuth.signOut();
     localStorage.removeItem('user');
+    localStorage.removeItem('uid');
     this.router.navigate(['home']);
+   // localStorage.clear();
 
   }
    /* Setting up user data when sign in with username/password, 
   sign up with username/password and sign in with social auth  
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
   SetUserData(user: any) {
-    this.shared.setUserID(user.uid);
-    this.readData(`Users`,`${user.uid}`).subscribe((doc: any) => {
-      this.shared.setTeamName(doc.data().name);
+    this.shared.setUserID(user);
+    this.readData(`Users`,`${user}`).subscribe((doc: any) => {
       
-      localStorage.setItem('teamName',doc.data().name);
+      localStorage.setItem('teamName',doc.data().teamName);
     });
-    const userData: User = {
-      uid: user.uid,
-      email: user.email,
-      displayName: user.displayName,
-    }
+
+  }
+  downloadPdf(pdfUrl: string, pdfName: string ) {
+    FileSaver.saveAs(pdfUrl, pdfName);
+  }
+
+  public downloadLink(){
+    this.storage.storage.refFromURL('gs://slrc-school.appspot.com/Submission/Bymhw8vttmaidBhc7tIo5GP66Tc2/1/WSWLR 1.zip').getDownloadURL().then(url => {
+      FileSaver.saveAs(url,"sfdsf.pdf");
+    })
   }
   readData(collection:any,details:string){
     return this.db.collection(collection).doc(details).get();
@@ -141,15 +143,13 @@ export class FirebaseService {
   readMarks(){
     return this.db.collection("Marks").valueChanges();
   }
+  readOverallScore(teamName:any){
+    return this.db.collection("Marks").doc(teamName).valueChanges();
+  }
 
   taskRequset(taskName:string) {
     const fun = this.functions.httpsCallable("fireGetColors");
     return fun({taskNum:taskName});
   }
 
-  public downloadLink() {
-    this.storage.storage.refFromURL('gs://slrc-school.appspot.com/Submission/Bymhw8vttmaidBhc7tIo5GP66Tc2/easy/clique wording-2.png').getDownloadURL().then(url => {
-      console.log(url);
-    })
-  }
 }

@@ -16,18 +16,20 @@ import { Observable } from 'rxjs';
 export class LeaderBoardComponent implements OnInit {
   posts: Observable<any>;
   dataSource: Array<unknown>;
-
-  
-
+  posts_length:any;
+  index=1;
+  taskNum:any;
 
   constructor(
     private FirebaseService: FirebaseService,
     private afs:AngularFirestore
-  ) { }
+  ) {
+    this.taskNum = localStorage.getItem('taskno');
+   }
 
   ngOnInit(): void {
-    this.posts = this.afs.collection("Marks", ref => ref.orderBy('1','desc')).valueChanges().pipe();  
+    this.posts = this.afs.collection("Marks", ref => ref.orderBy(`${this.taskNum}`,'desc')).valueChanges().pipe(); 
+     
   }
-
 
 }

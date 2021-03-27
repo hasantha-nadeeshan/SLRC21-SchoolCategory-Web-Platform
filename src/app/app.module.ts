@@ -22,6 +22,7 @@ import { SubmissionComponent } from './submission/submission.component';
 import { TaskDescriptionComponent } from './task-description/task-description.component';
 import { LeaderBoardComponent } from './leader-board/leader-board.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OverallLeaderboardComponent } from './overall-leaderboard/overall-leaderboard.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SignInComponent,
     SubmissionComponent,
     TaskDescriptionComponent,
-    LeaderBoardComponent
+    LeaderBoardComponent,
+    OverallLeaderboardComponent
   ],
   imports: [
     BrowserModule,

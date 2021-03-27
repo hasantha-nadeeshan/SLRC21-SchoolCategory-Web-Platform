@@ -1,7 +1,43 @@
+
+
 table {
+    color: white;
     width: 100%;
-  }
-  
-  th.mat-sort-header-sorted {
-    color: black;
-  }
+}
+
+.task1-table{
+  border-collapse: separate ;
+    border-spacing: 0px 5px;
+    background-color: inherit;
+    width: 100%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius:15px;
+}
+.points{
+  text-align: center;
+}
+.rank{
+  text-align: center;
+  color: #0177D7;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+th{
+  text-align: center;
+  background-color: #549AE6;
+}
+tr{
+  color: white;
+  background-color: #252D47;
+}
+
+tr:hover{
+  background-color: #0177D7 !important;
+  transform: scale(1.04);
+}
+
+@media screen and (min-width: 720px){
+ 
+}
+@media screen and (min-width: 720px){}

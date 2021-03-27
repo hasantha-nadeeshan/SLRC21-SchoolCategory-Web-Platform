@@ -1,14 +1,19 @@
 <app-overall-progress></app-overall-progress>
+
 <section>
+
 <div class="container ">
 <div class="row no-gutters">
-    <div class="col-12 col-md-10  ">
+    <div class="col-12 col-md-10 task-body  ">
         <nav ngbNav #nav="ngbNav" class="nav-tabs">
             <ng-container ngbNavItem>
               <a ngbNavLink>Problem</a>
               <ng-template ngbNavContent>
-                <div class="box">
+                <div class="box problem">
                 {{description}}
+                <div>
+                  <input type="button" class="btn btnPrimary" value="Log in" (click)="uploadService.downloadLink()">
+                </div>
                 </div>
               </ng-template>
             
@@ -25,13 +30,9 @@
             <ng-container ngbNavItem>
               <a ngbNavLink>Leaderboard</a>
               <ng-template ngbNavContent>
-                <div class="box">               <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam. Nulla facilisi.
-                  Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu, congue et odio.
-                  Duis pharetra et nisl at faucibus. Quisque luctus pulvinar arcu, et molestie lectus ultrices et. Sed diam urna,
-                  egestas ut ipsum vel, volutpat volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus nisl enim, nec
-                  tristique ipsum euismod facilisis. Morbi ut bibendum est, eu tincidunt odio. Orci varius natoque penatibus et
-                  magnis dis parturient montes, nascetur ridiculus mus. Mauris aliquet odio ac lorem aliquet ultricies in eget
-                  neque. Phasellus nec tortor vel tellus pulvinar feugiat.</p>
+                <div class="box">
+                  <app-leader-board></app-leader-board>
+                  
                   </div>
               </ng-template>
             </ng-container>
@@ -43,7 +44,7 @@
               <p>Task no: <span style="font-weight: bold;">{{taskNumber}}</span></p>
               <p>Difficulty  :  <span style="color: green; font-weight: bold;">{{difficulty}}</span></p>
               <p>Max score :{{maxScore}}</p>
-              <p>Score :<span></span></p>
+              <p>Score :{{currentScore}}<span></span></p>
             </div>
     </div>
   </div>
