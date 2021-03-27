@@ -4,7 +4,7 @@
     display: block;
     position: relative;
     width: 100%;
-    height: 210px;
+    height: 240px;
     background-color:#111827;
     z-index: 1;
     color: white;
@@ -25,17 +25,17 @@
     height: 70px;
 }
 .team-details{
-    font-size: 10px;
+    font-size: 12px;
     padding-top: 7px;
     z-index: 2;
     display: block;
-    height:80px;
+    height:70px;
 }
 button{
     color: white;
     border:2px solid #007BFF;
     background-color: #007BFF;
-    display: none;
+    display: block;
     opacity: 0.8;
 }
 button:hover{

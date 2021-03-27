@@ -8,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor() { }
-  scrollWindow(){
+  /*scrollWindow(){
     window.scroll(0,676/2); 
-  }
+  }*/
   ngOnInit() {
-this.scrollWindow();
+//this.scrollWindow();
     
   }
   displayLogIN():void{

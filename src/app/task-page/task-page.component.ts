@@ -11,11 +11,12 @@ export class TaskPageComponent implements OnInit {
   taskNumber=''; 
   description='';
   maxScore = '';
+  currentScore= '';
   
   incomingData={};     //variable
   constructor(
     private shared:SharedService,
-    private uploadService: FirebaseService,) {
+    public uploadService: FirebaseService,) {
       
     this.difficulty=localStorage.getItem('difficulty');      //variable
     this.taskNumber=localStorage.getItem('taskno');
@@ -24,7 +25,13 @@ export class TaskPageComponent implements OnInit {
         this.description = res.description;
         this.maxScore = res.maxScore;
     });
-    console.log(this.incomingData);
+    this.uploadService.readData(`Users`,localStorage.getItem('uid')).subscribe((doc: any) => {
+      localStorage.setItem('teamName',doc.data().teamName);
+      this.uploadService.readOverallScore(localStorage.getItem('teamName')).subscribe((doc:any) =>{
+          this.currentScore = doc[this.taskNumber];
+      });
+    });
+   
    }   //private constructor to use in this file
 
   ngOnInit(): void {
