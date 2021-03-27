@@ -46,6 +46,12 @@ export class EasyTasksComponent implements OnInit {
             for (let i = 0; i < 6; i++) {
               this.score[i]=doc[i+1];
             }
+            document.getElementById("pro1").style.width=this.score[0]+"%";
+            document.getElementById("pro2").style.width=this.score[1]+"%";
+            document.getElementById("pro3").style.width=this.score[2]+"%";
+            document.getElementById("pro4").style.width=this.score[3]+"%";
+            document.getElementById("pro5").style.width=this.score[4]+"%";
+            document.getElementById("pro6").style.width=this.score[5]+"%";
             
         });
       });

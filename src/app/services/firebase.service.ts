@@ -131,13 +131,16 @@ export class FirebaseService {
     FileSaver.saveAs(pdfUrl, pdfName);
   }
 
-  public downloadLink(){
-    this.storage.storage.refFromURL('gs://slrc-school.appspot.com/Submission/Bymhw8vttmaidBhc7tIo5GP66Tc2/1/WSWLR 1.zip').getDownloadURL().then(url => {
+  public downloadLink(link:string){
+    this.storage.storage.refFromURL(link).getDownloadURL().then(url => {
       FileSaver.saveAs(url,"sfdsf.pdf");
     })
   }
   readData(collection:any,details:string){
     return this.db.collection(collection).doc(details).get();
+  }
+  readTime(collection:any,details:string){
+    return this.db.collection(collection).doc(details).valueChanges();
   }
 
   readMarks(){

@@ -12,6 +12,8 @@ export class TaskPageComponent implements OnInit {
   description='';
   maxScore = '';
   currentScore= '';
+  pdfLink:any;
+  zipLink:any;
   
   incomingData={};     //variable
   constructor(
@@ -24,6 +26,9 @@ export class TaskPageComponent implements OnInit {
     this.uploadService.taskRequset(this.taskNumber).subscribe((res:any)=>{
         this.description = res.description;
         this.maxScore = res.maxScore;
+       this.pdfLink = res.linkpdf;
+      this.zipLink = res.linkzip;
+        console.log(this.pdfLink,"link");
     });
     this.uploadService.readData(`Users`,localStorage.getItem('uid')).subscribe((doc: any) => {
       localStorage.setItem('teamName',doc.data().teamName);

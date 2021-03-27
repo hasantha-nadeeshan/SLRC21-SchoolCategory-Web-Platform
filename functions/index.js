@@ -54,7 +54,7 @@ exports.downloads = functions.https.onCall((data, contex) => {
     
 });
 
-exports.fireGetColors = functions.https.onCall((data, context) => {
+exports.fireGetColors= functions.https.onCall((data, context) => {
   return new Promise((resolve, reject) => {
       var taskDetails = {};
       var db = admin.firestore();
