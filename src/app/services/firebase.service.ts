@@ -53,16 +53,18 @@ export class FirebaseService {
       .then(result => {
         this.userData = result.user;
         localStorage.setItem('user', JSON.stringify(result.user));
-        localStorage.setItem('uid',this.userData.uid);
-        
-        this.ngZone.run(() => {
-        this.router.navigate(['easyTask']);
-      });
+        localStorage.setItem('uid', this.userData.uid);
+        this.SetUserData(this.userData.uid).then(result => {
+          this.ngZone.run(() => {
+            this.router.navigate(['easyTask']);
+          });
+        });
+
       
     }).catch((error)=>{
       window.alert(error.message)
     })
-    this.SetUserData(this.userData.uid);
+    
    }
 
   async createUser() {
@@ -78,6 +80,7 @@ export class FirebaseService {
           console.log(username,no);
           console.log(result.user.uid);
           this.db.collection(`Users`).doc(`${result.user.uid}`).set({
+            id: result.user.uid,
             rank: 0,
             overallScore: 0,
             teamName: val["team_name"]
@@ -147,11 +150,13 @@ export class FirebaseService {
   sign up with username/password and sign in with social auth  
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
   SetUserData(user: any) {
-    this.shared.setUserID(user);
-    this.readData(`Users`,`${user}`).subscribe((doc: any) => {
-      
-      localStorage.setItem('teamName',doc.data().teamName);
-    });
+    return new Promise((resolve, reject) => {
+      this.readData(`Users`,`${user}`).subscribe((doc: any) => {
+        localStorage.setItem('teamName', doc.data().teamName);
+        resolve('easyTask')
+      });
+    })
+    
 
   }
   downloadPdf(pdfUrl: string, pdfName: string ) {

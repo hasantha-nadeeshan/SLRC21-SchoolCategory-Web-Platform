@@ -1,32 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../services/firebase.service';
-import{SharedService} from "../shared/shared.service"
+import { SharedService } from "../shared/shared.service"
+
 @Component({
   selector: 'app-overall-progress',
   templateUrl: './overall-progress.component.html',
   styleUrls: ['./overall-progress.component.css']
 })
 export class OverallProgressComponent implements OnInit {
-  teamName='';
+  teamName='';  
   overallScore:any;
   constructor(
     public authService: FirebaseService,
   ) {
-    this.authService.readData(`Users`,localStorage.getItem('uid')).subscribe((doc: any) => {
-      localStorage.setItem('teamName',doc.data().teamName);
-      this.teamName = localStorage.getItem('teamName');
-      this.authService.readOverallScore(localStorage.getItem('teamName')).subscribe((doc:any) =>{
-        console.log(doc);
-        this.overallScore = doc.Overall_Score;
-        document.getElementById("pro").style.width=this.overallScore+"%";
-      });
+    // this.authService.readData(`Users`,localStorage.getItem('uid')).subscribe((doc: any) => {
+    //   localStorage.setItem('teamName',doc.data().teamName);
+    //   this.teamName = doc.data().teamName;
+    // });
+    this.authService.readOverallScore(localStorage.getItem('teamName')).subscribe((doc:any) =>{
+      this.overallScore = doc.Overall_Score;
+      document.getElementById("pro").style.width=doc.Overall_Score+"%";
     });
+    this.teamName = localStorage.getItem('teamName');
     
     
   }
     
   ngOnInit(): void {
-    
+
   }
   
 
