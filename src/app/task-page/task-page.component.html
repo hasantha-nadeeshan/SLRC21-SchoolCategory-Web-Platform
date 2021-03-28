@@ -20,9 +20,8 @@
               <div class="box problem">
               {{description}}
               <div>
-                <button type="button" class="btn btn-success" value="Log in" (click)="uploadService.downloadLink(this.pdfLink)"></button>
-                <button type="button" class="btn btn-success" value="Log in" (click)="uploadService.downloadLink(this.zipLink)"></button>
-                
+                <button type="button" class="btn btn-success"  (click)="uploadService.downloadLink(this.pdfLink)"></button>
+                <button type="button" class="btn btn-success"  (click)="uploadService.downloadLink(this.zipLink)"></button>
               </div>
               </div>
             </ng-template>

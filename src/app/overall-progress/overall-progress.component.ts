@@ -14,22 +14,21 @@ export class OverallProgressComponent implements OnInit {
   constructor(
     public authService: FirebaseService,
   ) {
-    this.authService.readData(`Users`,localStorage.getItem('uid')).subscribe((doc: any) => {
-      localStorage.setItem('teamName',doc.data().teamName);
-      this.teamName = localStorage.getItem('teamName');
-      this.authService.readOverallScore(localStorage.getItem('teamName')).subscribe((doc:any) =>{
-        console.log(doc);
-        this.overallScore = doc.Overall_Score;
-        this.prec = (this.overallScore*100)/this.maxTotalScore;
-        document.getElementById("pro").style.width=this.prec+"%";
-      });
+    // this.authService.readData(`Users`,localStorage.getItem('uid')).subscribe((doc: any) => {
+    //   localStorage.setItem('teamName',doc.data().teamName);
+    //   this.teamName = doc.data().teamName;
+    // });
+    this.authService.readOverallScore(localStorage.getItem('teamName')).subscribe((doc:any) =>{
+      this.overallScore = doc.Overall_Score;
+      document.getElementById("pro").style.width=doc.Overall_Score+"%";
     });
+    this.teamName = localStorage.getItem('teamName');
+
     
     
   }
     
   ngOnInit(): void {
-    
   }
   
 

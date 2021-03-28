@@ -53,17 +53,17 @@ export class FirebaseService {
       .then(result => {
         this.userData = result.user;
         localStorage.setItem('user', JSON.stringify(result.user));
-        localStorage.setItem('uid',this.userData.uid);
-        
-        this.ngZone.run(() => {
-        this.router.navigate(['easyTask']);
-      });
-      
+        localStorage.setItem('uid', this.userData.uid);
+        this.SetUserData(this.userData.uid).then(result => {
+          this.ngZone.run(() => {
+            this.router.navigate(['easyTask']);
+          });
+        }); 
     }).catch((error)=>{
       window.alert(error.message)
-    })
-    this.SetUserData(this.userData.uid);
+    }) 
    }
+
   pushFileToStorage(fileUpload: FileUpload, task: string): Observable<number> {
     const filePath = `${this.basePath}/${this.userData.uid}/${task}/${fileUpload.file.name}`;
     const storageRef = this.storage.ref(filePath);
@@ -120,24 +120,28 @@ export class FirebaseService {
   sign up with username/password and sign in with social auth  
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
   SetUserData(user: any) {
-    this.shared.setUserID(user);
-    this.readData(`Users`,`${user}`).subscribe((doc: any) => {
-      
-      localStorage.setItem('teamName',doc.data().teamName);
-    });
-
+    return new Promise((resolve, reject) => {
+      this.readData(`Users`,`${user}`).subscribe((doc: any) => {
+        localStorage.setItem('teamName', doc.data().teamName);
+        resolve('easyTask')
+      });
+    })
   }
+
   downloadPdf(pdfUrl: string, pdfName: string ) {
     FileSaver.saveAs(pdfUrl, pdfName);
   }
 
   public downloadLink(link:string){
     this.storage.storage.refFromURL(link).getDownloadURL().then(url => {
-      FileSaver.saveAs(url,"sfdsf.pdf");
+      FileSaver.saveAs(url);
     })
   }
   readData(collection:any,details:string){
     return this.db.collection(collection).doc(details).get();
+  }
+  readTeam(collection:any,details:string){
+    return this.db.collection(collection).doc(details).valueChanges();
   }
   readTime(collection:any,details:string){
     return this.db.collection(collection).doc(details).valueChanges();
