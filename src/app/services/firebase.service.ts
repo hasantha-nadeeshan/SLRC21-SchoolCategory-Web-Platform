@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { SharedService } from '../shared/shared.service';
 
+
 declare var require:any;
 const FileSaver = require('file-saver');
 
@@ -31,7 +32,7 @@ export class FirebaseService {
     private db: AngularFirestore,
     private storage: AngularFireStorage,
     private functions: AngularFireFunctions,
-    private shared : SharedService
+    private shared: SharedService,
     
 
   ) { 
