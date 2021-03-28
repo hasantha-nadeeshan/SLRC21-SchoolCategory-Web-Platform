@@ -9,7 +9,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { SharedService } from '../shared/shared.service';
-import  *  as  data  from  'python_scripts/data.json';
+
+
 declare var require:any;
 const FileSaver = require('file-saver');
 
@@ -58,42 +59,12 @@ export class FirebaseService {
           this.ngZone.run(() => {
             this.router.navigate(['easyTask']);
           });
-        });
-
-      
+        }); 
     }).catch((error)=>{
       window.alert(error.message)
-    })
-    
+    }) 
    }
 
-  async createUser() {
-    let products = (data as any).default;
-    let no = 0
-    for (var val of products) {
-      no++;
-      let name = val["team_name"].replace(/\s/g, "").toLowerCase();
-      let username = name + '@slrc.com';
-      let paswwd = val["password"];
-      console.log(no);
-      await this.firebaseAuth.createUserWithEmailAndPassword(username, paswwd).then(result => {
-          console.log(username,no);
-          console.log(result.user.uid);
-          this.db.collection(`Users`).doc(`${result.user.uid}`).set({
-            id: result.user.uid,
-            rank: 0,
-            overallScore: 0,
-            teamName: val["team_name"]
-          })
-      });       
-    }
-
-
-  
-  }
-  
-  
-  
   pushFileToStorage(fileUpload: FileUpload, task: string): Observable<number> {
     const filePath = `${this.basePath}/${this.userData.uid}/${task}/${fileUpload.file.name}`;
     const storageRef = this.storage.ref(filePath);
@@ -156,20 +127,22 @@ export class FirebaseService {
         resolve('easyTask')
       });
     })
-    
-
   }
+
   downloadPdf(pdfUrl: string, pdfName: string ) {
     FileSaver.saveAs(pdfUrl, pdfName);
   }
 
   public downloadLink(link:string){
     this.storage.storage.refFromURL(link).getDownloadURL().then(url => {
-      FileSaver.saveAs(url,"sfdsf.pdf");
+      FileSaver.saveAs(url);
     })
   }
   readData(collection:any,details:string){
     return this.db.collection(collection).doc(details).get();
+  }
+  readTeam(collection:any,details:string){
+    return this.db.collection(collection).doc(details).valueChanges();
   }
   readTime(collection:any,details:string){
     return this.db.collection(collection).doc(details).valueChanges();

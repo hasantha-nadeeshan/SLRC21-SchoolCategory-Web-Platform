@@ -11,5 +11,5 @@ export class SlrcFooterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
 }

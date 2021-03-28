@@ -1,54 +1,55 @@
 <app-overall-progress></app-overall-progress>
 
 <section>
-
 <div class="container ">
-<div class="row no-gutters">
-    <div class="col-12 col-md-10 task-body  ">
-        <nav ngbNav #nav="ngbNav" class="nav-tabs">
-            <ng-container ngbNavItem>
-              <a ngbNavLink>Problem</a>
-              <ng-template ngbNavContent>
-                <div class="box problem">
-                {{description}}
-                <div>
-                  <input type="button" class="btn btnPrimary" value="Log in" (click)="uploadService.downloadLink(this.pdfLink)">
-                </div>
-                </div>
-              </ng-template>
-            
-            </ng-container>
-            <ng-container ngbNavItem>
-              <a ngbNavLink>Submissions</a>
-              <ng-template ngbNavContent>
-                <!-- submission -->
-                    <div class="box">
-                      <app-submission></app-submission>
-                    </div>
-              </ng-template>
-            </ng-container>
-            <ng-container ngbNavItem>
-              <a ngbNavLink>Leaderboard</a>
-              <ng-template ngbNavContent>
-                <div class="box">
-                  <app-leader-board></app-leader-board>
-                  
-                  </div>
-              </ng-template>
-            </ng-container>
-          </nav>
-          <div [ngbNavOutlet]="nav" class="mt-2"></div>
-    </div>
+  <hr>
+  <div class="row no-gutters">
     <div class=" col-12 col-md-2">
-            <div class="state-body" style="text-align: center;">
+            <div class="state-body" >
               <p>Task no: <span style="font-weight: bold;">{{taskNumber}}</span></p>
               <p>Difficulty  :  <span style="color: green; font-weight: bold;">{{difficulty}}</span></p>
               <p>Max score :{{maxScore}}</p>
               <p>Score :{{currentScore}}<span></span></p>
             </div>
     </div>
+    <div class="col-12 col-md-10 task-body  ">
+      <nav ngbNav #nav="ngbNav" class="nav-tabs">
+          <ng-container ngbNavItem>
+            <a ngbNavLink>Problem</a>
+            <ng-template ngbNavContent>
+              <div class="box problem">
+              {{description}}
+              <div>
+                <button type="button" class="btn btn-success"  (click)="uploadService.downloadLink(this.pdfLink)"></button>
+                <button type="button" class="btn btn-success"  (click)="uploadService.downloadLink(this.zipLink)"></button>
+              </div>
+              </div>
+            </ng-template>
+          
+          </ng-container>
+          <ng-container ngbNavItem>
+            <a ngbNavLink>Submissions</a>
+            <ng-template ngbNavContent>
+              <!-- submission -->
+                  <div class="box">
+                    <app-submission></app-submission>
+                  </div>
+            </ng-template>
+          </ng-container>
+          <ng-container ngbNavItem>
+            <a ngbNavLink>Leaderboard</a>
+            <ng-template ngbNavContent>
+              <div class="box">
+                <app-leader-board></app-leader-board>
+                
+                </div>
+            </ng-template>
+          </ng-container>
+        </nav>
+        <div [ngbNavOutlet]="nav" class="mt-2"></div>
   </div>
   </div>
+</div>
 </section>
 
   
