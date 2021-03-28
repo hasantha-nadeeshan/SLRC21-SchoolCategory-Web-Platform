@@ -9,6 +9,8 @@ import{SharedService} from "../shared/shared.service"
 export class OverallProgressComponent implements OnInit {
   teamName='';
   overallScore:any;
+  prec:any;
+  maxTotalScore=300;
   constructor(
     public authService: FirebaseService,
   ) {
@@ -18,7 +20,8 @@ export class OverallProgressComponent implements OnInit {
       this.authService.readOverallScore(localStorage.getItem('teamName')).subscribe((doc:any) =>{
         console.log(doc);
         this.overallScore = doc.Overall_Score;
-        document.getElementById("pro").style.width=this.overallScore+"%";
+        this.prec = (this.overallScore*100)/this.maxTotalScore;
+        document.getElementById("pro").style.width=this.prec+"%";
       });
     });
     
