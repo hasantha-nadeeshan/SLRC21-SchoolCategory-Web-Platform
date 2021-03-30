@@ -26,8 +26,25 @@ a{
 .nav-tabs{
     border-bottom: none;
 }
-.problem{
+.box{
+    padding: 10px;
     color: white;
+}
+.zip{
+    margin-left: 20px;
+    margin-top: 7px;
+}
+.pdf{
+    margin-top: 7px;
+}
+.des-img{
+    width: 50vw;
+    height: 40vw;
+    padding: 7px;
+}
+#img-body{
+    width: inherit;
+    height: inherit;
 }
 
 @media screen and (min-width: 767px) {

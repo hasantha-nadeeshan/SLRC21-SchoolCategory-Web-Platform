@@ -6,6 +6,8 @@ import {TaskPageComponent} from './task-page/task-page.component'
 import { SignInComponent } from './sign-in/sign-in.component';
 import{ OverallLeaderboardComponent } from './overall-leaderboard/overall-leaderboard.component'
 import { AuthGuard } from './shared/guard/auth.guard';
+import{VeiwTaskComponent} from './veiw-task/veiw-task.component'
+
 const routes: Routes = [
   {
     path: '', 
@@ -31,7 +33,12 @@ const routes: Routes = [
   {
     path:'leaderboard',
     component: OverallLeaderboardComponent
+  },
+  {
+    path:'viewtasks',
+    component: VeiwTaskComponent
   }
+
 
 ];
 

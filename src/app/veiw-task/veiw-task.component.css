@@ -1,0 +1,42 @@
+section{
+    padding-top: 60px;
+    
+    background: url("/assets/easy-back2.jpg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  
+    padding-bottom: 20px;
+}
+.easy-box{
+    padding-top: 20px;
+}
+.card{
+    position: relative;
+    margin-top: 10px;
+    background-color: #282F3C;
+    color: white;
+}
+
+.progress{
+    position: absolute;
+    right: 10px;
+    bottom: 4px;
+    width: 40%;
+    margin-top: 5px;
+}
+button{
+    border:2px solid #34B15E;
+    background-color:transparent;
+}
+button:hover{
+    border:2px solid #34B15E;
+    background-color:#34B15E ;
+}
+.card:hover{
+    transform: scale(1.03);
+}
+.zip{
+    margin-left: 20px;
+}

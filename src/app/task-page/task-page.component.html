@@ -20,8 +20,12 @@
               <div class="box problem">
               {{description}}
               <div>
-                <button type="button" class="btn btn-success"  (click)="uploadService.downloadLink(this.pdfLink)"></button>
-                <button type="button" class="btn btn-success"  (click)="uploadService.downloadLink(this.zipLink)"></button>
+                <button type="button" class="btn btn-success pdf"  (click)="uploadService.downloadLink(this.pdfLink)"><i class="far fa-file-pdf"></i> Task Details</button>
+                <button type="button" class="btn btn-success zip"  (click)="uploadService.downloadLink(this.zipLink)"><i class="fas fa-file-archive"></i> Task files</button>
+                <div class="row ml-auto mr-auto des-img">
+                  <img id="img-body" [src]="imgLink">
+                </div>
+
               </div>
               </div>
             </ng-template>
@@ -52,5 +56,5 @@
 </div>
 </section>
 
-  
+
   

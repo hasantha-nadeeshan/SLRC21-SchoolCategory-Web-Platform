@@ -9,6 +9,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { SharedService } from '../shared/shared.service';
+import { promise } from 'selenium-webdriver';
 
 
 declare var require:any;
@@ -98,15 +99,15 @@ export class FirebaseService {
     return (user !== null) ? true : false;
   }
 
-  routeGuard() {
+  get routeGuard():boolean {
     this.firebaseAuth.authState.subscribe(user => {
       if(!user){
-        //this.router.navigate([id]);
-        return true
+        this.router.navigate(['home']);
       }
-      return false;
-       
-     })
+      else{
+      }
+     });
+     return true;
   }
 
   SignOut(){
@@ -126,7 +127,7 @@ export class FirebaseService {
         localStorage.setItem('teamName', doc.data().teamName);
         resolve('easyTask')
       });
-    })
+    });
   }
 
   downloadPdf(pdfUrl: string, pdfName: string ) {
@@ -137,6 +138,15 @@ export class FirebaseService {
     this.storage.storage.refFromURL(link).getDownloadURL().then(url => {
       FileSaver.saveAs(url);
     })
+  }
+  
+  public getImgDownloadLink(link:string){
+    return new Promise((resolve, reject) => {
+      this.storage.storage.refFromURL(link).getDownloadURL().then(url => {
+        console.log(url,"fr");
+      resolve(url);
+      });
+    });
   }
   readData(collection:any,details:string){
     return this.db.collection(collection).doc(details).get();

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { concatAll } from 'rxjs/operators';
 import { FirebaseService } from '../services/firebase.service';
 import{SharedService} from "../shared/shared.service"
 @Component({
@@ -19,8 +20,10 @@ export class OverallProgressComponent implements OnInit {
     //   this.teamName = doc.data().teamName;
     // });
     this.authService.readOverallScore(localStorage.getItem('teamName')).subscribe((doc:any) =>{
+      
       this.overallScore = doc.Overall_Score;
-      document.getElementById("pro").style.width=doc.Overall_Score+"%";
+  
+      document.getElementById("pro").style.width=(doc.Overall_Score*100/300)+"%";
     });
     this.teamName = localStorage.getItem('teamName');
 

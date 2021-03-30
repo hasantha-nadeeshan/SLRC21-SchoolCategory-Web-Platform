@@ -8,16 +8,49 @@ section{
   }
   
   .second{
+    position: relative;
     width: 80px;
     height: 80px;
     background-color:#252D47;
   }
+  .number2{
+    margin-top: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40px;
+    height: 40px;
+  }
+  .badge2{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    height: 30px;
+  }
+  .badge1{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    height: 30px;
+  }
   .first{
+    position: relative;
     width: 100px;
     height: 120px;
     background-color: #252D47;
   }
+  .number1{
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+  }
   .third{
+    position: relative;
     width: 80px;
     height: 80px;
     background-color:#252D47;
@@ -74,9 +107,33 @@ section{
       width: 200px;
       height: 200px;
     }
+    .number2{
+      margin-top: 35px;
+      width: 100px;
+      height: 100px;
+    }
+    .badge2{
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      width: 50px;
+      height: 70px;
+    }
     .first{
       width: 250px;
       height: 250px;
+    }
+    .number1{
+      margin-top: 35px;
+      width: 130px;
+      height: 130px;
+    }
+    .badge1{
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      width: 50px;
+      height: 70px;
     }
   }
   

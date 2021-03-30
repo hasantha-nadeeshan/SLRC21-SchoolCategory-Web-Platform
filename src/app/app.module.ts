@@ -23,6 +23,7 @@ import { TaskDescriptionComponent } from './task-description/task-description.co
 import { LeaderBoardComponent } from './leader-board/leader-board.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OverallLeaderboardComponent } from './overall-leaderboard/overall-leaderboard.component';
+import { VeiwTaskComponent } from './veiw-task/veiw-task.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { OverallLeaderboardComponent } from './overall-leaderboard/overall-leade
     SubmissionComponent,
     TaskDescriptionComponent,
     LeaderBoardComponent,
-    OverallLeaderboardComponent
+    OverallLeaderboardComponent,
+    VeiwTaskComponent
   ],
   imports: [
     BrowserModule,

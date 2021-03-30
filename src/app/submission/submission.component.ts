@@ -15,13 +15,16 @@ export class SubmissionComponent implements OnInit {
   taskNumber = '';
   sub1Time:any;
   sub2Time:any;
+  rulesLink:any;
 
   constructor(
-    private uploadService: FirebaseService
+    public uploadService: FirebaseService
     
   ) {
     this.taskNumber = localStorage.getItem('taskno');
-    
+    this.uploadService.taskRequset(this.taskNumber).subscribe((res:any)=>{
+      this.rulesLink = res.rules_link;
+  });
     this.uploadService.readData(`Users/${localStorage.getItem('uid')}/Submission`,this.taskNumber).subscribe((doc:any)=>{
       if(!doc.exists){
         this.attempt = 2;
