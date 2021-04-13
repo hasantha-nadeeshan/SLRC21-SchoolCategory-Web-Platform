@@ -1,4 +1,5 @@
 
+
 #home{
 	position: relative;
 }
@@ -59,14 +60,14 @@
 .regbutton{
 	width: 90px;
 	position: absolute;
-	top: 300px;
+	top: 240px;
 	font-size: 10px;
 	left: 10px;
 }
 .logbutton{
 	width: 90px;
 	position: absolute;
-	top: 300px;
+	top: 240px;
 	font-size: 10px;
 	left: 110px;
 }
@@ -129,14 +130,14 @@
 }
 .ECLUB-logo img{
 	width: 50px;
-	height: 50px;
+	height: 60px;
 }
 .sponsor-row1{
 	display: flex;
 	height: 250px;
 	position: absolute;
 	top: 10px;
-	background-color: rgba(5,3,25,0.4);
+	background-color: rgba(0, 0, 0, 0.8);
 }
 
 .description-slrc,.description-competition,.description-rule,.timeline-body{
@@ -156,7 +157,7 @@
 	font-size: 11px;
 }
 .timeline-body{
-	top: 320px;
+	top: 250px;
 }
 .description-slrc-slides{
     display: none;
@@ -199,23 +200,81 @@
 .silver,.gold,.plat{
 	display: none;
 }
-.platinum-row2{
-	margin-bottom: 3px;
-	width: 250px;
+.platinum,.platinum-row2{
 	height: inherit;
-	border: 2px solid white;
+	background: url("/assets/adllogo.png")no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: contain;
+}
+.platispons{
+	margin-top: -20px;
+	height: 50px;
+	background: url("/assets/platspons.png")no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: contain;
+}
+.goldspons{
+	margin-top: -20px;
+	height: 50px;
+	background: url("/assets/goldspons.png")no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: contain;
+}
+.gold1{
+	height: inherit;
+	background: url("/assets/lseglogo.png")no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: contain;
+}
+.gold2{
+	height: inherit;
+	background: url("/assets/synomlogo.png")no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: contain;
+}
+.synom{
+	height: inherit;
+	background: url("/assets/synomlogo.png")no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: contain;
+	padding-right: 8px;
+}
+.lseg{
+	height: inherit;
+	background: url("/assets/lseglogo.png")no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: contain;
+}
+.platinum-row2{
+	margin-bottom: 8px;
+	width: 150px;
+	height: 70px;
 }
 .gold-row2{
-	margin-bottom: 3px;
-	width: 300px;
-	height: inherit;
-	border: 2px solid gold;
+	margin-bottom: 8px;
+	width: 370px;
+	height: 50px;
+	/*border: 2px solid gold;*/
 }
 .silver-row2{
-	margin-bottom: 3px;
+	margin-bottom: 8px;
 	width: 350px;
-	height: inherit;
-	border: 2px solid silver;
+	height: 50px;
+	/*border: 2px solid silver;*/
 }
 
 @media screen and (min-width: 576px) {
@@ -234,10 +293,10 @@
 		top: 340px;
 	}
 	.platinum-row2{
-		width: 350px;
+		width: 200px;
 	}
 	.gold-row2{
-		width: 400px;
+		width: 470px;
 	}
 	.silver-row2{
 		width: 450px;
@@ -249,11 +308,19 @@
 		display: flex;
 		position: absolute;
 		top: 30px;
-		background-color: rgba(5,3,25,0.4);
-		padding-top: 30px;
+		
+		padding-top: 20px;
 	}
 	.silver,.gold,.plat{
 		display: block;
+	}
+	#sponsor-heading{
+		color: white;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 25px;
+		border-bottom: 3px orangered solid;
 	}
 	.sponsor-row2{
 		display: none;
@@ -261,17 +328,17 @@
 	.silver1,.silver2{
 		width: 80px;
 		height: 80px;
-		border: 1px solid silver;
+		/*border: 1px solid silver;*/
 	}
 	.gold1,.gold2{
-		width: 100px;
-		height: 100px;
-		border: 2px solid gold;
+		width: 120px;
+		height: 160px;
+		/*border: 1px solid gold;*/
 	}
 	.platinum{
 		width: 160px;
 		height: 160px;
-		border: 3px solid white;
+		/*border: 3px solid white;*/
 	}
 	.description-slrc,.timeline-body{
 		font-size: 20px;
@@ -333,7 +400,7 @@
 	}
 	.ECLUB-logo img{
 		width: 80px;
-		height: 80px;
+		height: 90px;
 	}
 	.heading{
 		width: 450px;
@@ -343,17 +410,18 @@
 	.silver1,.silver2{
 		width: 100px;
 		height: 100px;
-		border: 1px solid silver;
+	/*	border: 1px solid silver;*/
 	}
 	.gold1,.gold2{
-		width: 120px;
-		height: 120px;
-		border: 2px solid gold;
+		margin-top: 30px;
+		width: 190px;
+		height: 130px;
+		/*border: 2px solid gold;*/
 	}
 	.platinum{
-		width: 180px;
+		width: 220px;
 		height: 180px;
-		border: 3px solid white;
+		/*: 3px solid white;*/
 	}
 	.description-slrc{
 		top: 280px;
@@ -362,15 +430,18 @@
 	.timeline-body{
 		top: 360px;
 	}
-	.description-rule-body{
+	.description-rule-body,.description-slrc-body,.description-competition-body{
+		text-align: left;
 		padding-top: 8px;
+		padding-left: 15px;
+		padding-right: 8px;
 	
 	}
 	
 }
 @media screen and (min-width: 1000px) {
 	.regbutton,.logbutton{
-		top: 440px;
+		top: 330px;
 	}
 	.countdownbox{
 		font-size: 40px;
@@ -386,6 +457,7 @@
 		height: 90px;
 	}
 	.gold1,.gold2{
+		margin-top: 25px;
 		width: 110px;
 		height: 110px;
 	}
@@ -396,17 +468,17 @@
 	.silver1,.silver2{
 		width: 120px;
 		height: 120px;
-		border: 1px solid silver;
+		/*border: 1px solid silver;*/
 	}
 	.gold1,.gold2{
-		width: 140px;
-		height: 140px;
-		border: 2px solid gold;
+		width: 230px;
+		height: 150px;
+		/*border: 2px solid gold;*/
 	}
 	.platinum{
-		width: 200px;
+		width: 300px;
 		height: 200px;
-		border: 3px solid white;
+		/*border: 3px solid white;*/
 	}
 	.description-slrc,.description-slrc-body,.description-slrc-slides,
 	.description-competition,.description-competition-body,.description-competition-slides{
@@ -416,9 +488,17 @@
 	.description-rule{
 		top: 400px;
 	}
+	.description-slrc{
+		top: 300px;
+	}
 	.description-rule,.description-rule-body,.description-rule-slides{
 		min-height: 250px;
 		font-size: 14px;
+	}
+	.sponsor-row1{
+		top: 0px;
+		width: 100vw;
+		height: 300px;
 	}
 	
 }

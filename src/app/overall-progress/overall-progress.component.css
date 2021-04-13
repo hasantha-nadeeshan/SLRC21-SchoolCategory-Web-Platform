@@ -9,6 +9,11 @@
     z-index: 1;
     color: white;
 }
+.logout{
+    position: absolute;
+    right: 20px;
+    top: 60px;
+}
 .progress-body{
     position: absolute;
     left: 0;

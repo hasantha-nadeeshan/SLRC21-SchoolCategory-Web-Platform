@@ -9,7 +9,7 @@ section .section-title {
     text-transform: uppercase;
 }
 #contact {
-    background: #280325 !important;
+    background: #280325 ;
 }
 #contact h5{
 	padding-left: 10px;
@@ -72,6 +72,7 @@ section .section-title {
 	transform: scaleX(-1);
 }
 @media (max-width:767px){
+	
 	#contact h5 {
     padding-left: 0;
     border-left: transparent;

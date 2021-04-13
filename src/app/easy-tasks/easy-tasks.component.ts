@@ -16,7 +16,7 @@ export class EasyTasksComponent implements OnInit {
   constructor(
     private uploadService: FirebaseService
     ) {
-      for (let i = 0; i <6; i++) {
+      for (let i = 0; i <2; i++) {
         this.uploadService.taskRequset(this.tasks[1]).subscribe((res:any)=>{
           this.maxScore[i]=res.maxScore;
         

@@ -92,7 +92,7 @@ section{
     transform: scale(1.04);
   }
   
-  @media screen and (min-width: 720px){
+  @media screen and (min-width: 780px){
     .second,.third{
       width: 150px;
       height: 150px;

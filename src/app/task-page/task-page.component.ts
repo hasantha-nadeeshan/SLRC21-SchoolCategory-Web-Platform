@@ -15,8 +15,8 @@ export class TaskPageComponent implements OnInit {
   pdfLink:any;
   zipLink:any;
   imgLink:any;
-  image="https://firebasestorage.googleapis.com/v0/b/slrc-school.appspot.com/o/Tasks%2F1%2FDid%20you%20know%204.png?alt=media&token=fa7b73a7-4989-4b2c-bb9f-818e9c563707";
-  
+  deadLine:any;
+
   incomingData={};     //variable
   constructor(
   
@@ -32,6 +32,9 @@ export class TaskPageComponent implements OnInit {
         this.pdfLink = res.linkpdf;
         this.zipLink = res.linkzip;
        this.imgLink = res.linkimg;
+       this.deadLine = new Date((res.deadline)._seconds * 1000);
+       console.log(this.deadLine)
+
        this.uploadService.getImgDownloadLink(this.imgLink).then(data=>{
           this.imgLink= data;
        });

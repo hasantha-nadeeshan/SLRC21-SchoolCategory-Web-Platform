@@ -11,7 +11,7 @@ export class OverallProgressComponent implements OnInit {
   teamName='';
   overallScore:any;
   prec:any;
-  maxTotalScore=300;
+  maxTotalScore=200;
   constructor(
     public authService: FirebaseService,
   ) {
@@ -23,7 +23,7 @@ export class OverallProgressComponent implements OnInit {
       
       this.overallScore = doc.Overall_Score;
   
-      document.getElementById("pro").style.width=(doc.Overall_Score*100/300)+"%";
+      document.getElementById("pro").style.width=(doc.Overall_Score*100/200)+"%";
     });
     this.teamName = localStorage.getItem('teamName');
 

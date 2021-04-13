@@ -5,12 +5,12 @@
 		<div class="container">
 
 			<!--Countdown-->
-			<div class="countdownbox">
+			<!--<div class="countdownbox">
 				<div class="day">{{days}} <span>Days</span></div>
 				<div class="hour">{{hours}} <span>Hours</span></div>
 				<div class="min">{{mins}} <span>Minutes</span></div>
 				<div class="sec">{{seconds}} <span>Seconds</span></div>
-			</div>
+			</div>-->
 		<div id="logincomponent">
 			<app-sign-in></app-sign-in>
 		</div>
@@ -47,7 +47,7 @@
 						<img src="/assets/ENTC-logo.png">
 					</div>
 					<div class="col-sm-4 col-md-4 ECLUB-logo">
-						<img src="/assets/ECLUB-logo.jpg">
+						<img src="/assets/ECLUB-logo.png">
 					</div>
 				</div>
 			</div>
@@ -58,36 +58,45 @@
 </header>
 
 <section class="sponsors col-12" id="sponsorbox">
+	
 	<div class="row col-12 sponsor-row1">
-		<div class="col silver">
+		
+		<!--<div class="col silver">
 			<div class="row">
-				<div class="silver1 mr-auto ml-auto" data-aos="flip-left" data-aos-duration="1000"></div>
+				<div class="silver1 mr-auto ml-auto p-1" data-aos="flip-left" data-aos-duration="1000"></div>
 			</div>
-		</div>
+		</div>-->
 		<div class="col gold">
 			<div class="row">
 				<div class="gold1 mr-auto ml-auto" data-aos="flip-left" data-aos-duration="1000"></div>
 			</div>
+			<div class="goldspons mr-auto ml-auto"></div>
 		</div>
 		<div class="col plat">
 			<div class="row">
+			<!--	<p id="sponsor-heading">Sponsors</p>-->
 				<div class="platinum mr-auto ml-auto" data-aos="zoom-in"></div>
 			</div>
+			<div class="platispons mr-auto ml-auto"></div>
+
 		</div>
 		<div class="col gold">
 			<div class="row">
 				<div class="gold2 mr-auto ml-auto" data-aos="flip-right" data-aos-duration="1000"></div>
 			</div>
+			<div class="goldspons mr-auto ml-auto"></div>
 		</div>
-		<div class="col silver">
+		<!--<div class="col silver">
 			<div class="row">
 				<div class="silver2 mr-auto ml-auto" data-aos="flip-right" data-aos-duration="1000"></div>
 			</div>
-		</div>
+		</div>-->
 		<div class="row col-12 sponsor-row2 ml-auto mr-auto">
 			<div class=" platinum-row2 mr-auto ml-auto">	
 			</div>
-			<div class="gold-row2 mr-auto ml-auto">	
+			<div class="row gold-row2 mr-auto ml-auto">
+				<div class="synom col-6 "></div>	
+				<div class="lseg col-6"></div>
 			</div>
 			<div class=" silver-row2 mr-auto ml-auto">
 			</div>
@@ -101,8 +110,8 @@
 			</p>
 			<p class="card-text">
 				<b>SLRC 2021 will be organized under two categories.</b>
-				<br>●School Category
-				<br>●University Category	
+				<br>School Category
+				<br>University Category	
 			</p>
 		  </div>
 		  <div class="col-1 col-sm-1 col-md-3 col-lg-4 col-xl-4 description-slrc-slides">
@@ -143,10 +152,41 @@
 	
 </section>
 <section class="col-12" id="timeline-box">
-	<app-svg-timeline></app-svg-timeline>
-	<div class="row col-12 sponsor-row1">
-		
-	</div>
+	
+	
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+			  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+			  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+			  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner">
+			  <div class="carousel-item active">
+				<a href="https://www.axiatadigitallabs.com/?utm_source=unimoratuwa&utm_medium=banner_ad&utm_campaign=robotics_apr2021" target="blank">
+					<img src="/assets/adlbanner.jpg" class="d-block w-100" alt="...">
+				</a>
+			  </div>
+			  <div class="carousel-item">
+				<a href="https://www.axiatadigitallabs.com/?utm_source=unimoratuwa&utm_medium=banner_ad&utm_campaign=robotics_apr2021" target="blank">
+				<img src="/assets/adlbanner.jpg" class="d-block w-100" alt="...">
+				</a>
+			  </div>
+			  <div class="carousel-item">
+				<a href="https://www.axiatadigitallabs.com/?utm_source=unimoratuwa&utm_medium=banner_ad&utm_campaign=robotics_apr2021" target="blank">
+					<img src="/assets/adlbanner.jpg" class="d-block w-100" alt="...">
+				</a>
+			  </div>
+			</div>
+			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			  <span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+			  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			  <span class="sr-only">Next</span>
+			</a>
+		  </div>
+	
 	<div class="row col-12 timeline-body">
 		<div class="row">
 			<app-slrc-hr-timeline></app-slrc-hr-timeline>

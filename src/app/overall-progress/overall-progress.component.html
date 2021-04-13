@@ -2,6 +2,11 @@
   <div id="logo">
     <img src="assets/logoslrc_white.png">
   </div>
+  <div class="logout">
+    <button (click)="authService.SignOut()" >
+      <i class="fas fa-sign-out-alt"></i> Log Out
+    </button>
+  </div>
   <div class="container progress-body">
     <div class=" row" >
           <div class=" col-sm-4 col-md-4 team-details">
@@ -11,16 +16,9 @@
             </div>
             <p>Score : {{overallScore}}</p>
           </div>
-          <div class=" col-sm-6 col-md-6 current-state">
-            <p>Remaining Time : {{days}}d {{hours}}h {{mins}}m {{seconds}}s</p>
-           
-          </div>
-          <div class=" col-sm-2 col-md-2 current-state">
+          
             
-            <button (click)="authService.SignOut()" >
-              <i class="fas fa-sign-out-alt"></i> Log Out
-            </button>
-          </div>
+          
       </div>
   </div>
 

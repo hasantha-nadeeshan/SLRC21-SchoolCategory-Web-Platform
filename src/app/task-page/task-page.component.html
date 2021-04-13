@@ -10,6 +10,7 @@
               <p>Difficulty  :  <span style="color: green; font-weight: bold;">{{difficulty}}</span></p>
               <p>Max score :{{maxScore}}</p>
               <p>Score :{{currentScore}}<span></span></p>
+              <p>Deadline : {{deadLine}}</p>
             </div>
     </div>
     <div class="col-12 col-md-10 task-body  ">
@@ -19,14 +20,14 @@
             <ng-template ngbNavContent>
               <div class="box problem">
               {{description}}
-              <div>
-                <button type="button" class="btn btn-success pdf"  (click)="uploadService.downloadLink(this.pdfLink)"><i class="far fa-file-pdf"></i> Task Details</button>
-                <button type="button" class="btn btn-success zip"  (click)="uploadService.downloadLink(this.zipLink)"><i class="fas fa-file-archive"></i> Task files</button>
-                <div class="row ml-auto mr-auto des-img">
-                  <img id="img-body" [src]="imgLink">
+              <p>May the force be with you.</p>
+                <div>
+                  <button type="button" class="btn btn-success pdf"  (click)="uploadService.downloadLink(this.pdfLink)"><i class="far fa-file-pdf"></i> Task Details</button>
+                  <button type="button" class="btn btn-success zip"  (click)="uploadService.downloadLink(this.zipLink)"><i class="fas fa-file-archive"></i> Task files</button>
+                  <div class="row ml-auto mr-auto des-img">
+                    <img id="img-body" [src]="imgLink">
+                  </div>
                 </div>
-
-              </div>
               </div>
             </ng-template>
           
