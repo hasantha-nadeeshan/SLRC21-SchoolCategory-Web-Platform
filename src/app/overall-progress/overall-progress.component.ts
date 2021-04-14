@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { concatAll } from 'rxjs/operators';
 import { FirebaseService } from '../services/firebase.service';
-import{SharedService} from "../shared/shared.service"
+import { SharedService } from "../shared/shared.service"
+
 @Component({
   selector: 'app-overall-progress',
   templateUrl: './overall-progress.component.html',
   styleUrls: ['./overall-progress.component.css']
 })
 export class OverallProgressComponent implements OnInit {
-  teamName='';
+  teamName='';  
   overallScore:any;
   prec:any;
   maxTotalScore=200;
@@ -26,7 +27,6 @@ export class OverallProgressComponent implements OnInit {
       document.getElementById("pro").style.width=(doc.Overall_Score*100/200)+"%";
     });
     this.teamName = localStorage.getItem('teamName');
-
     
     
   }
