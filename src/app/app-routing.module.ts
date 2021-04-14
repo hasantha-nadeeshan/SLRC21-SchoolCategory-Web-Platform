@@ -6,7 +6,8 @@ import {TaskPageComponent} from './task-page/task-page.component'
 import { SignInComponent } from './sign-in/sign-in.component';
 import{ OverallLeaderboardComponent } from './overall-leaderboard/overall-leaderboard.component'
 import { AuthGuard } from './shared/guard/auth.guard';
-import{VeiwTaskComponent} from './veiw-task/veiw-task.component'
+import { VeiwTaskComponent } from './veiw-task/veiw-task.component'
+import { UnitasksComponent } from './unitasks/unitasks.component';
 
 const routes: Routes = [
   {
@@ -37,7 +38,12 @@ const routes: Routes = [
   {
     path:'viewtasks',
     component: VeiwTaskComponent
+  },
+  {
+    path: 'unitask',
+    component: UnitasksComponent,canActivate: [AuthGuard]
   }
+    
 
 
 ];

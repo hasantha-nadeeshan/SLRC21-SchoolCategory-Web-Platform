@@ -57,9 +57,19 @@ export class FirebaseService {
         localStorage.setItem('user', JSON.stringify(result.user));
         localStorage.setItem('uid', this.userData.uid);
         this.SetUserData(this.userData.uid).then(result => {
-          this.ngZone.run(() => {
-            this.router.navigate(['easyTask']);
-          });
+          this.db.collection('Users').doc(`${this.userData.uid}`).get().subscribe((result:any) => {
+            if (result.data().cat) {
+              this.ngZone.run(() => {
+                this.router.navigate(['unitask']);
+              });
+            } else {
+              this.ngZone.run(() => {
+                this.router.navigate(['easyTask']);
+              });
+            }
+
+          })
+
         }); 
     }).catch((error)=>{
       window.alert(error.message)
