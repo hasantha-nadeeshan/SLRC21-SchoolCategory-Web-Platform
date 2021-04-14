@@ -19,7 +19,6 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SubmissionComponent } from './submission/submission.component';
-import { TaskDescriptionComponent } from './task-description/task-description.component';
 import { LeaderBoardComponent } from './leader-board/leader-board.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OverallLeaderboardComponent } from './overall-leaderboard/overall-leaderboard.component';
@@ -41,7 +40,6 @@ import { VeiwTaskComponent } from './veiw-task/veiw-task.component';
     SpinnerComponent,
     SignInComponent,
     SubmissionComponent,
-    TaskDescriptionComponent,
     LeaderBoardComponent,
     OverallLeaderboardComponent,
     VeiwTaskComponent

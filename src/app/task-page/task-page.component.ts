@@ -52,7 +52,8 @@ export class TaskPageComponent implements OnInit {
    }   //private constructor to use in this file
 
   ngOnInit(): void {
-  
+    
+    
     //document.querySelector('img').src=this.imgLink;
    }
   
