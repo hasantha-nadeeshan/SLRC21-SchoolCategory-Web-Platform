@@ -1,0 +1,46 @@
+<section>
+    <div class="container top3">
+        <div class=" row col-12 col-sm-12 align-items-center">
+            <div class=" col-4 col-md-4 square">
+                <div class="box second ml-auto mr-auto ">
+                    <div class="row mr-auto ml-auto">
+                        <img class="badge2" src="/assets/silverbadge.png">
+                        <img class="number2" src="/assets/second.png">
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 col-dm-4 square ">
+                <div class="box first ml-auto mr-auto">
+                    <div class="row mr-auto ml-auto">
+                        <img class="badge1" src="/assets/goldbadge.png">
+                        <img class="number1" src="/assets/first.png">
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 col-md-4 square ">
+                <div class="box third ml-auto mr-auto">
+                    <div class="row mr-auto ml-auto">
+                        <img class="badge2" src="/assets/bronzebadge.png">
+                        <img class="number2" src="/assets/third.png">
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+    <div class="container leader-box">
+        <table class="task1-table" cellpadding="15">
+            <thead>
+                <th>Rank</th>
+                <th>Team Name</th>
+                <th>Points</th>
+            </thead>
+            <tr *ngFor="let post of posts  | async; let i = index">
+                <td class="rank">{{i+1}}</td>
+                <td>{{post.team_name}}</td>
+                <td class="points">{{post['overall_score']}} pts</td>
+            </tr> 
+        </table>
+    </div>
+</section>
+
+

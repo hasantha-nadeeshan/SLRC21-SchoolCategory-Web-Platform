@@ -1,1 +1,60 @@
-<p>unitasks works!</p>
+
+<app-unioverall></app-unioverall>
+<section id="easytask-id">
+
+<div class="container easy-box">
+<div class="row ">
+    <div class="col-sm-12 col-12">
+      <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Task-1</h5>
+            <p class="card-text">Can you find the distance to the objects?</p>
+            <div class="col">
+              <button type="button" class="btn btn-success pdf"  (click)="uploadService.downloadLink(this.pdfLink1)"><i class="far fa-file-pdf"></i> Task Details</button>
+              <button type="button" class="btn btn-success zip"  (click)="uploadService.downloadLink(this.zipLink1)"><i class="fas fa-file-archive"></i> Task files</button>
+              <a href="https://forms.gle/dUs5gTbJZRYXvRqb6" target="_blank"><button type="button" class="btn btn-success zip" ><i class="fas fa-file-archive"></i> Submission</button></a>
+            </div>
+            <div class="row">
+             
+              <div class="col" style="text-align: right;">
+                
+                Score:<span style="font-weight: bold;"> {{score1}}/100</span>
+              </div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" id="pro1" role="progressbar"  aria-valuemin="0" aria-valuemax="100">{{score1}}%</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+   <div class="col-sm-12 col-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Task-2</h5>
+          <p class="card-text">Message decoding robot</p>
+          <div class="col">
+            <button type="button" class="btn btn-success pdf"  (click)="uploadService.downloadLink(this.pdfLink2)"><i class="far fa-file-pdf"></i> Task Details</button>
+            <button type="button" class="btn btn-success zip"  (click)="uploadService.downloadLink(this.zipLink2)"><i class="fas fa-file-archive"></i> Task files</button> 
+            <a href="" target="_blank"><button type="button" class="btn btn-success zip" ><i class="fas fa-file-archive"></i> Submission</button></a>
+          </div>
+          <div class="row">
+            <div class="col" style="text-align: right;">
+              
+              Score:<span style="font-weight: bold;"> {{score2}}/100</span>
+            </div>
+          </div>
+          <div class="progress">
+            <div class="progress-bar" id="pro2"role="progressbar"  aria-valuemin="0" aria-valuemax="100">{{score2}}%</div>
+        </div>
+        </div>
+      </div>
+    </div>
+  -->
+</div>
+</div>
+
+</section>
+
+
+

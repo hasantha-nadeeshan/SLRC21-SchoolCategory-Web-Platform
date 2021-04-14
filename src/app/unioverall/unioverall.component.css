@@ -1,0 +1,103 @@
+
+#progress-box{
+    padding-top: 60px;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-color:#111827;
+    z-index: 1;
+    color: white;
+}
+.logout{
+    position: absolute;
+    right: 20px;
+    top: 60px;
+}
+.progress-body{
+    position: absolute;
+    left: 0;
+}
+.progress{
+    margin:4px;
+    width: 30%;
+}
+.current-state{
+    font-size: 12px;
+    padding-top: 7px;
+    z-index: 2;
+    display: block;
+    height: 30px;
+}
+.team-details{
+    font-size: 12px;
+    padding-top: 7px;
+    z-index: 2;
+    display: block;
+    height:70px;
+}
+button{
+    color: white;
+    border:2px solid white;
+    background-color: transparent;
+    display: block;
+}
+
+#logo{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: block;
+    width: 60px;
+    height: 30px;
+}
+#logo img{
+    width: inherit;
+    height: inherit;
+}
+@media screen and (min-width: 576px) {
+    #progress-box{
+        height: 170px;
+    }
+    .team-details{
+        padding-left: 15px;
+        font-size: 12px;
+    }
+    .current-state{
+        font-size: 15px;
+        height: 80px;
+    }
+    button{
+        display: block;
+    }
+    #logo{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        display: block;
+        width: 60px;
+        height: 30px;
+    }
+    #logo img{
+        width: inherit;
+        height: inherit;
+    }
+
+    
+}
+@media screen and (min-width: 767px) {
+    #logo{
+        position: absolute;
+        top: 20px;
+        left: 50px;
+        display: block;
+        width: 80px;
+        height: 35px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .team-details{
+        padding-left: 20px;
+    }
+}
