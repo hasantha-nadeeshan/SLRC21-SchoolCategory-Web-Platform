@@ -19,7 +19,6 @@ export class UnitasksComponent implements OnInit {
   ) { 
     
     this.uploadService.readUniOverallScore(localStorage.getItem('teamName')).subscribe((doc:any) =>{
-      console.log(doc);
       this.score1 = doc["one"];
       this.score2 = doc["two"];
      document.getElementById('pro1').style.width=(this.score1)+"%";
