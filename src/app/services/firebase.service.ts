@@ -59,12 +59,12 @@ export class FirebaseService {
         this.SetUserData(this.userData.uid).then(result => {
           this.db.collection('Users').doc(`${this.userData.uid}`).get().subscribe((result:any) => {
             if (result.data().cat) {
-              localStorage.setItem('cat', result.data().cat);
+              localStorage.setItem('cat', 'unitask');
               this.ngZone.run(() => {
                 this.router.navigate(['unitask']);
               });
             } else {
-              localStorage.setItem('cat', 'nop');
+              localStorage.setItem('cat', 'easyTask');
               this.ngZone.run(() => {
                 this.router.navigate(['easyTask']);
               });
@@ -111,15 +111,26 @@ export class FirebaseService {
     return (user !== null) ? true : false;
   }
 
-  get routeGuard():boolean {
+  routeGuard(value: string) {
     this.firebaseAuth.authState.subscribe(user => {
       if(!user){
         this.router.navigate(['home']);
       }
-      else{
+    });
+    if (localStorage.getItem('cat') == value) {
+      return true;
+    } else if ((value != 'unitask') && (value != "easyTask")) {
+      if (value == 'question' && localStorage.getItem('cat') == 'unitask') {
+        this.router.navigate(['home']);
+        return false;
+      } else {
+        return true;
       }
-     });
-     return true;
+    } else {
+      this.router.navigate(['home']);
+      return false;
+    }
+         
   }
 
   SignOut(){
