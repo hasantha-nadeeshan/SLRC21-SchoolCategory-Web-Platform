@@ -23,6 +23,9 @@ import { LeaderBoardComponent } from './leader-board/leader-board.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OverallLeaderboardComponent } from './overall-leaderboard/overall-leaderboard.component';
 import { VeiwTaskComponent } from './veiw-task/veiw-task.component';
+import { UnitasksComponent } from './unitasks/unitasks.component';
+import { UnioverallComponent } from './unioverall/unioverall.component';
+import { SignInUniComponent } from './sign-in-uni/sign-in-uni.component';
 
 
 @NgModule({
@@ -42,7 +45,10 @@ import { VeiwTaskComponent } from './veiw-task/veiw-task.component';
     SubmissionComponent,
     LeaderBoardComponent,
     OverallLeaderboardComponent,
-    VeiwTaskComponent
+    VeiwTaskComponent,
+    UnitasksComponent,
+    UnioverallComponent,
+    SignInUniComponent
   ],
   imports: [
     BrowserModule,

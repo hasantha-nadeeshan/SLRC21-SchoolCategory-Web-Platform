@@ -33,7 +33,14 @@ export class TaskPageComponent implements OnInit {
         this.zipLink = res.linkzip;
        this.imgLink = res.linkimg;
        this.deadLine = new Date((res.deadline)._seconds * 1000);
-       console.log(this.deadLine)
+       console.log((res.deadline)._seconds*1000,"dead");
+       console.log(new Date().getTime(),"current");
+       if((res.deadline)._seconds*1000<new Date().getTime()){
+         console.log("time out");
+       }
+       else{
+         console.log("have more time");
+       }
 
        this.uploadService.getImgDownloadLink(this.imgLink).then(data=>{
           this.imgLink= data;

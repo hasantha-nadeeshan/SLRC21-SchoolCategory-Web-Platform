@@ -16,6 +16,7 @@ export class SubmissionComponent implements OnInit {
   sub1Time:any;
   sub2Time:any;
   rulesLink:any;
+  deadLineSec:any;
 
   constructor(
     public uploadService: FirebaseService
@@ -24,6 +25,7 @@ export class SubmissionComponent implements OnInit {
     this.taskNumber = localStorage.getItem('taskno');
     this.uploadService.taskRequset(this.taskNumber).subscribe((res:any)=>{
       this.rulesLink = res.rules_link;
+      this.deadLineSec = (res.deadline)._seconds * 1000;
   });
     this.uploadService.readData(`Users/${localStorage.getItem('uid')}/Submission`,this.taskNumber).subscribe((doc:any)=>{
       if(!doc.exists){
@@ -50,6 +52,10 @@ export class SubmissionComponent implements OnInit {
     this.selectedFiles = event.target.files;
   }
 upload():void{
+  if(this.deadLineSec< new Date().getTime()){
+    alert("Time Out")
+  }
+  else{
     if(this.attempt>0){
     const file = this.selectedFiles.item(0);
     this.selectedFiles = undefined;
@@ -72,6 +78,7 @@ upload():void{
       alert("You have submitted maximum Submissions")
     }
   }
+}
 
 
 

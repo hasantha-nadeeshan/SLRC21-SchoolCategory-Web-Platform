@@ -1,0 +1,26 @@
+
+    
+          <!-- Calling GoogleAuth Api from AuthService -->
+  
+       
+          <div id="id01" class="modal">
+            
+            <form class="modal-content animate" action="/action_page.php" method="post">
+              <div class="imgcontainer">
+                <span onclick="document.getElementById('logincomponent').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="/assets/logoslrc_blue.png" alt="Avatar" class="avatar">
+              </div>
+          
+              <div class="container">
+              
+                <input type="text" class="formControl" placeholder="Username" #userName required>
+          
+              
+                <input type="password" class="formControl" placeholder="Password" #userPassword required>
+                  
+                <button type="button" class="btn btnPrimary" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">Login uni</button>
+                
+              </div>
+            </form>
+          </div>
+         
