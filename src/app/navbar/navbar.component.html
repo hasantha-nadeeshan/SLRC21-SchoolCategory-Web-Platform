@@ -30,11 +30,23 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#timeline-box">Timeline</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" routerLinkActive="active" routerLink="/viewtasks">Tasks</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Tasks
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="#" routerLinkActive="active" routerLink="/viewTasksSchool">School Category</a>
+                      <a class="dropdown-item" href="#" routerLinkActive="active" routerLink="/viewTasksUniversity">University Category</a>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" routerLinkActive="active" routerLink="/leaderboard">Leaderboard</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Leaderboard
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="#" routerLinkActive="active" routerLink="/SchoolLeaderboard">School Category</a>
+                      <a class="dropdown-item" href="#" routerLinkActive="active" routerLink="/UniLeaderboard">University Category</a>
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Contact</a>

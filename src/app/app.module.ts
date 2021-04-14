@@ -26,6 +26,8 @@ import { VeiwTaskComponent } from './veiw-task/veiw-task.component';
 import { UnitasksComponent } from './unitasks/unitasks.component';
 import { UnioverallComponent } from './unioverall/unioverall.component';
 import { SignInUniComponent } from './sign-in-uni/sign-in-uni.component';
+import { UniLeaderboardComponent } from './uni-leaderboard/uni-leaderboard.component';
+import { VeiwuniComponent } from './veiwuni/veiwuni.component';
 
 
 @NgModule({
@@ -48,7 +50,9 @@ import { SignInUniComponent } from './sign-in-uni/sign-in-uni.component';
     VeiwTaskComponent,
     UnitasksComponent,
     UnioverallComponent,
-    SignInUniComponent
+    SignInUniComponent,
+    UniLeaderboardComponent,
+    VeiwuniComponent
   ],
   imports: [
     BrowserModule,

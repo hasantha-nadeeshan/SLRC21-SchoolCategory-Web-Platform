@@ -174,6 +174,9 @@ export class FirebaseService {
   readOverallScore(teamName:any){
     return this.db.collection("Marks").doc(teamName).valueChanges();
   }
+  readUniOverallScore(teamName:any){
+    return this.db.collection("Unimarks").doc(teamName).valueChanges();
+  }
 
   taskRequset(taskName:string) {
     const fun = this.functions.httpsCallable("fireGetColors");

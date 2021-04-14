@@ -8,6 +8,8 @@ import{ OverallLeaderboardComponent } from './overall-leaderboard/overall-leader
 import { AuthGuard } from './shared/guard/auth.guard';
 import { VeiwTaskComponent } from './veiw-task/veiw-task.component'
 import { UnitasksComponent } from './unitasks/unitasks.component';
+import { UniLeaderboardComponent } from './uni-leaderboard/uni-leaderboard.component';
+import { VeiwuniComponent } from './veiwuni/veiwuni.component';
 
 const routes: Routes = [
   {
@@ -32,12 +34,20 @@ const routes: Routes = [
     component:TaskPageComponent,canActivate: [AuthGuard]
   },
   {
-    path:'leaderboard',
+    path:'SchoolLeaderboard',
     component: OverallLeaderboardComponent
   },
   {
-    path:'viewtasks',
+    path: 'UniLeaderboard',
+    component : UniLeaderboardComponent
+  },
+  {
+    path:'viewTasksSchool',
     component: VeiwTaskComponent
+  },
+  {
+    path:'viewTasksUniversity',
+    component: VeiwuniComponent
   },
   {
     path: 'unitask',
