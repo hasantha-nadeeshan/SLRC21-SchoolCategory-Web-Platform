@@ -9,8 +9,8 @@ import { FirebaseService } from '../services/firebase.service';
 export class UnitasksComponent implements OnInit {
   score1:any;
   score2:any;
-  pdfLink1 = "";
-  zipLink1 = "";
+  pdfLink1 = "gs://slrc-school.appspot.com/Tasks/unitask1/SLRC2021_UniversityCategory_S1_Task.pdf";
+  zipLink1 = "gs://slrc-school.appspot.com/Tasks/unitask1/SLRC2021_UniversityCategory_S1.zip";
   pdfLink2 = "";
   zipLink2 = "";
 
