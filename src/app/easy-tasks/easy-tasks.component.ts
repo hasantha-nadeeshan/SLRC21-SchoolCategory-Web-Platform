@@ -16,9 +16,10 @@ export class EasyTasksComponent implements OnInit {
   constructor(
     private uploadService: FirebaseService
     ) {
-      for (let i = 0; i <2; i++) {
-        this.uploadService.taskRequset(this.tasks[1]).subscribe((res:any)=>{
+      for (let i = 0; i <3; i++) {
+        this.uploadService.taskRequset(this.tasks[i]).subscribe((res:any)=>{
           this.maxScore[i]=res.maxScore;
+          
         
           this.uploadService.readOverallScore(localStorage.getItem('teamName')).subscribe((doc:any) =>{
             this.score[i] = ((doc[i + 1]*100)/this.maxScore[i]);
@@ -31,7 +32,7 @@ export class EasyTasksComponent implements OnInit {
      }   //private constructir to use in this file
   
   ngOnInit(): void {
-
+    
     
   }
   
