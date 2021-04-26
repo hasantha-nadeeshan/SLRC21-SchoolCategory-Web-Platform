@@ -1,0 +1,9 @@
+.box{
+    width: 500px;
+    height: 500px;
+    background-color: red;
+    transform-origin: 10% 10%;
+    transform: rotate3d(1, -50, 1, -60deg);
+    font-size: 60px;
+    padding: 10px;
+}

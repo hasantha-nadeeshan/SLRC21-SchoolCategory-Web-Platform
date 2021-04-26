@@ -28,6 +28,7 @@ import { UnioverallComponent } from './unioverall/unioverall.component';
 import { SignInUniComponent } from './sign-in-uni/sign-in-uni.component';
 import { UniLeaderboardComponent } from './uni-leaderboard/uni-leaderboard.component';
 import { VeiwuniComponent } from './veiwuni/veiwuni.component';
+import { LiveStreamingComponent } from './live-streaming/live-streaming.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { VeiwuniComponent } from './veiwuni/veiwuni.component';
     UnioverallComponent,
     SignInUniComponent,
     UniLeaderboardComponent,
-    VeiwuniComponent
+    VeiwuniComponent,
+    LiveStreamingComponent
   ],
   imports: [
     BrowserModule,
