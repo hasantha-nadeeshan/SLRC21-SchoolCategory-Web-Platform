@@ -1,10 +1,62 @@
+<section class="live">
+        <div class="content">
+        <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 ">
+            <div class="row box1 col-12">
+                <div class="details col-6 col-sm-6 col-md-4 col-lg-3">
+                    <div class="logo-slrc">
+                        <img src="assets/logoslrc_white.png">
+                        <div class="live-logo">
+                            <div class="blob red"></div>
+                            <p>Live</p>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-lg-2 live2">
+                    <div class="live-logo2">
+                        <div class="blob red"></div>
+                        <p>Live</p>
+                    </div>
+                </div>
+                <div class="robot col-6 col-sm-6 col-md-3 col-lg-3">
+                    <div class="robot-box">
+                        <app-robot-animation></app-robot-animation>
+                    </div>
+                </div>
+               
+                <div class="current-team col-12 col-sm-12 col-md-5 col-lg-4">
+                    <P >{{currentTeam}}</P>
+                    <div class="team-img ">
+                        <img src="assets/first.png">
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-8 video">
+            
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/1xwRzHZfSYE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-4 l-board">
 
-    <div class="row">
-      <div class="col-sm-3">col-sm-3
-          <div class="box">
-              hello world
-          </div>
-      </div>
-      <div class="col-sm-6">col-sm-6</div>
-      <div class="col-sm-3">col-sm-3</div>
-    </div>
+            <div class="box2">
+                <table class="task1-table" cellpadding="2">
+                    <thead>
+                        <th>Rank</th>
+                        <th>Team Name</th>
+                        <th>Points</th>
+                    </thead>
+                    <tr *ngFor="let post of posts  | async; let i = index">
+                        <td class="rank">{{i+1}}</td>
+                        <td>{{post.team_name}}</td>
+                        <td class="points">{{post['overall_score']}} pts</td>
+                    </tr> 
+                </table>
+            </div>
+        </div>
+        
+        </div>
+
+        </div>
+</section>

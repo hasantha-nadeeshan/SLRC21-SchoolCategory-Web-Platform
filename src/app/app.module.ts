@@ -29,6 +29,7 @@ import { SignInUniComponent } from './sign-in-uni/sign-in-uni.component';
 import { UniLeaderboardComponent } from './uni-leaderboard/uni-leaderboard.component';
 import { VeiwuniComponent } from './veiwuni/veiwuni.component';
 import { LiveStreamingComponent } from './live-streaming/live-streaming.component';
+import { RobotAnimationComponent } from './robot-animation/robot-animation.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { LiveStreamingComponent } from './live-streaming/live-streaming.componen
     SignInUniComponent,
     UniLeaderboardComponent,
     VeiwuniComponent,
-    LiveStreamingComponent
+    LiveStreamingComponent,
+    RobotAnimationComponent
   ],
   imports: [
     BrowserModule,

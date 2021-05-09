@@ -14,7 +14,6 @@ export class UniLeaderboardComponent implements OnInit {
   posts_length:any;
   index=1;
   constructor(
-    private FirebaseService: FirebaseService,
     private afs:AngularFirestore
   ) { }
 

@@ -1,0 +1,638 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
+
+#container {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-top: -0.75em;
+  margin-left: -1.5em;
+}
+#container #bot {
+  position: absolute;
+  height: 30px;
+  width: 50px;
+  background-color: #bdc3c7;
+  -webkit-animation: 5s botMotion infinite forwards;
+          animation: 5s botMotion infinite forwards;
+}
+#container #bot #eyes {
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  top: 5px;
+  left: 5px;
+  background-color: #333;
+}
+#container #bot #eyes .eye {
+  height: 10px;
+  width: 5px;
+  background-color: #3498db;
+  -webkit-animation: 5.6s eyeBlink 0.1s infinite infinite;
+          animation: 5.6s eyeBlink 0.1s infinite infinite;
+  border-radius: 40%;
+}
+#container #bot #eyes #left {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  margin-top: -5px;
+}
+#container #bot #eyes #right {
+  position: absolute;
+  top: 50%;
+  right: 25%;
+  margin-top: -5px;
+}
+#container #bot .finger {
+  position: absolute;
+  height: 10px;
+  width: 5px;
+  background-color: #bdc3c7;
+}
+#container #bot #leftarm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 25px;
+}
+#container #bot #leftarm .finger:nth-of-type(1) {
+  -webkit-animation: 5s lefttopfinger infinite forwards;
+          animation: 5s lefttopfinger infinite forwards;
+}
+#container #bot #leftarm .finger:nth-of-type(2) {
+  -webkit-animation: 5s leftbotfinger infinite forwards;
+          animation: 5s leftbotfinger infinite forwards;
+}
+#container #bot #rightarm {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 30px;
+  width: 25px;
+}
+#container #bot #rightarm .finger:nth-of-type(1) {
+  -webkit-animation: 5s righttopfinger infinite forwards;
+          animation: 5s righttopfinger infinite forwards;
+}
+#container #bot #rightarm .finger:nth-of-type(2) {
+  -webkit-animation: 5s rightbotfinger infinite forwards;
+          animation: 5s rightbotfinger infinite forwards;
+}
+#container #neck {
+  position: absolute;
+  top: 30px;
+  width: 40px;
+  height: 3px;
+  background-color: #333;
+  margin-left: 5px;
+  -webkit-animation: 5s neckMotion infinite forwards;
+          animation: 5s neckMotion infinite forwards;
+}
+#container #body {
+  position: absolute;
+  top: 33px;
+  width: 50px;
+  height: 10px;
+  background-color: #bdc3c7;
+  -webkit-animation: 5s bodyMotion infinite forwards;
+          animation: 5s bodyMotion infinite forwards;
+}
+#container #legs {
+  position: absolute;
+  top: 33px;
+  left: 25px;
+}
+#container #legs .foot {
+  width: 25px;
+  height: 10px;
+  background-color: #bdc3c7;
+}
+#container #legs #left {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  -webkit-animation: 5s leftfoot infinite forwards;
+          animation: 5s leftfoot infinite forwards;
+}
+#container #legs #right {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  -webkit-animation: 5s rightfoot infinite forwards;
+          animation: 5s rightfoot infinite forwards;
+}
+#credits {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
+#credits li {
+  display: inline-block;
+}
+#credits li a {
+  text-decoration: none;
+  color: #333;
+}
+#credits li a:hover {
+  color: #f14189;
+}
+#credits li:first-child {
+  margin-right: 0.5em;
+}
+@-webkit-keyframes lefttopfinger {
+  0% {
+    left: 0;
+    top: 5px;
+  }
+  10%, 20% {
+    left: -10px;
+    top: 5px;
+  }
+  30% {
+    left: -10px;
+    top: 2px;
+  }
+  40% {
+    left: -10px;
+    top: 5px;
+  }
+  50% {
+    left: -10px;
+    top: 2px;
+  }
+  60% {
+    left: -10px;
+    top: 5px;
+  }
+  70% {
+    left: -10px;
+    top: 2px;
+  }
+  80%, 90% {
+    left: -10px;
+    top: 5px;
+  }
+  100% {
+    left: 0;
+    top: 5px;
+  }
+}
+@keyframes lefttopfinger {
+  0% {
+    left: 0;
+    top: 5px;
+  }
+  10%, 20% {
+    left: -10px;
+    top: 5px;
+  }
+  30% {
+    left: -10px;
+    top: 2px;
+  }
+  40% {
+    left: -10px;
+    top: 5px;
+  }
+  50% {
+    left: -10px;
+    top: 2px;
+  }
+  60% {
+    left: -10px;
+    top: 5px;
+  }
+  70% {
+    left: -10px;
+    top: 2px;
+  }
+  80%, 90% {
+    left: -10px;
+    top: 5px;
+  }
+  100% {
+    left: 0;
+    top: 5px;
+  }
+}
+@-webkit-keyframes leftbotfinger {
+  0% {
+    left: 0;
+    bottom: 5px;
+  }
+  10%, 20% {
+    left: -10px;
+    bottom: 5px;
+  }
+  30% {
+    left: -10px;
+    bottom: 2px;
+  }
+  40% {
+    left: -10px;
+    bottom: 5px;
+  }
+  50% {
+    left: -10px;
+    bottom: 2px;
+  }
+  60% {
+    left: -10px;
+    bottom: 5px;
+  }
+  70% {
+    left: -10px;
+    bottom: 2px;
+  }
+  80%, 90% {
+    left: -10px;
+    bottom: 5px;
+  }
+  100% {
+    left: 0;
+    bottom: 5px;
+  }
+}
+@keyframes leftbotfinger {
+  0% {
+    left: 0;
+    bottom: 5px;
+  }
+  10%, 20% {
+    left: -10px;
+    bottom: 5px;
+  }
+  30% {
+    left: -10px;
+    bottom: 2px;
+  }
+  40% {
+    left: -10px;
+    bottom: 5px;
+  }
+  50% {
+    left: -10px;
+    bottom: 2px;
+  }
+  60% {
+    left: -10px;
+    bottom: 5px;
+  }
+  70% {
+    left: -10px;
+    bottom: 2px;
+  }
+  80%, 90% {
+    left: -10px;
+    bottom: 5px;
+  }
+  100% {
+    left: 0;
+    bottom: 5px;
+  }
+}
+@-webkit-keyframes righttopfinger {
+  0% {
+    right: 0;
+    top: 5px;
+  }
+  10%, 20% {
+    right: -10px;
+    top: 5px;
+  }
+  30% {
+    right: -10px;
+    top: 2px;
+  }
+  40% {
+    right: -10px;
+    top: 5px;
+  }
+  50% {
+    right: -10px;
+    top: 2px;
+  }
+  60% {
+    right: -10px;
+    top: 5px;
+  }
+  70% {
+    right: -10px;
+    top: 2px;
+  }
+  80%, 90% {
+    right: -10px;
+    top: 5px;
+  }
+  100% {
+    right: 0;
+    top: 5px;
+  }
+}
+@keyframes righttopfinger {
+  0% {
+    right: 0;
+    top: 5px;
+  }
+  10%, 20% {
+    right: -10px;
+    top: 5px;
+  }
+  30% {
+    right: -10px;
+    top: 2px;
+  }
+  40% {
+    right: -10px;
+    top: 5px;
+  }
+  50% {
+    right: -10px;
+    top: 2px;
+  }
+  60% {
+    right: -10px;
+    top: 5px;
+  }
+  70% {
+    right: -10px;
+    top: 2px;
+  }
+  80%, 90% {
+    right: -10px;
+    top: 5px;
+  }
+  100% {
+    right: 0;
+    top: 5px;
+  }
+}
+@-webkit-keyframes rightbotfinger {
+  0% {
+    right: 0;
+    bottom: 5px;
+  }
+  10%, 20% {
+    right: -10px;
+    bottom: 5px;
+  }
+  30% {
+    right: -10px;
+    bottom: 2px;
+  }
+  40% {
+    right: -10px;
+    bottom: 5px;
+  }
+  50% {
+    right: -10px;
+    bottom: 2px;
+  }
+  60% {
+    right: -10px;
+    bottom: 5px;
+  }
+  70% {
+    right: -10px;
+    bottom: 2px;
+  }
+  80%, 90% {
+    right: -10px;
+    bottom: 5px;
+  }
+  100% {
+    right: 0;
+    bottom: 5px;
+  }
+}
+@keyframes rightbotfinger {
+  0% {
+    right: 0;
+    bottom: 5px;
+  }
+  10%, 20% {
+    right: -10px;
+    bottom: 5px;
+  }
+  30% {
+    right: -10px;
+    bottom: 2px;
+  }
+  40% {
+    right: -10px;
+    bottom: 5px;
+  }
+  50% {
+    right: -10px;
+    bottom: 2px;
+  }
+  60% {
+    right: -10px;
+    bottom: 5px;
+  }
+  70% {
+    right: -10px;
+    bottom: 2px;
+  }
+  80%, 90% {
+    right: -10px;
+    bottom: 5px;
+  }
+  100% {
+    right: 0;
+    bottom: 5px;
+  }
+}
+@-webkit-keyframes leftfoot {
+  0% {
+    top: 0;
+  }
+  10%, 20% {
+    top: 0;
+  }
+  30% {
+    top: 12px;
+  }
+  40% {
+    top: 0;
+  }
+  50% {
+    top: 12px;
+  }
+  60% {
+    top: 0;
+  }
+  70% {
+    top: 12px;
+  }
+  80%, 90%, 100% {
+    top: 0;
+  }
+}
+@keyframes leftfoot {
+  0% {
+    top: 0;
+  }
+  10%, 20% {
+    top: 0;
+  }
+  30% {
+    top: 12px;
+  }
+  40% {
+    top: 0;
+  }
+  50% {
+    top: 12px;
+  }
+  60% {
+    top: 0;
+  }
+  70% {
+    top: 12px;
+  }
+  80%, 90%, 100% {
+    top: 0;
+  }
+}
+@-webkit-keyframes rightfoot {
+  0% {
+    top: 0;
+  }
+  10%, 20%, 30% {
+    top: 0;
+  }
+  40% {
+    top: 12px;
+  }
+  50% {
+    top: 0;
+  }
+  60% {
+    top: 12px;
+  }
+  70%, 80%, 90%, 100% {
+    top: 0;
+  }
+}
+@keyframes rightfoot {
+  0% {
+    top: 0;
+  }
+  10%, 20%, 30% {
+    top: 0;
+  }
+  40% {
+    top: 12px;
+  }
+  50% {
+    top: 0;
+  }
+  60% {
+    top: 12px;
+  }
+  70%, 80%, 90%, 100% {
+    top: 0;
+  }
+}
+@-webkit-keyframes botMotion {
+  0%, 10% {
+    top: 0;
+  }
+  20%, 80% {
+    top: -13px;
+  }
+  90%, 100% {
+    top: 0;
+  }
+}
+@keyframes botMotion {
+  0%, 10% {
+    top: 0;
+  }
+  20%, 80% {
+    top: -13px;
+  }
+  90%, 100% {
+    top: 0;
+  }
+}
+@-webkit-keyframes neckMotion {
+  0%, 10% {
+    top: 30px;
+  }
+  20%, 80% {
+    top: 17px;
+  }
+  90%, 100% {
+    top: 30px;
+  }
+}
+@keyframes neckMotion {
+  0%, 10% {
+    top: 30px;
+  }
+  20%, 80% {
+    top: 17px;
+  }
+  90%, 100% {
+    top: 30px;
+  }
+}
+@-webkit-keyframes bodyMotion {
+  0%, 10% {
+    top: 33px;
+  }
+  20%, 80% {
+    top: 20px;
+  }
+  90%, 100% {
+    top: 33px;
+  }
+}
+@keyframes bodyMotion {
+  0%, 10% {
+    top: 33px;
+  }
+  20%, 80% {
+    top: 20px;
+  }
+  90%, 100% {
+    top: 33px;
+  }
+}
+@-webkit-keyframes eyeBlink {
+  0%, 10% {
+    background-color: #3498db;
+  }
+  15% {
+    background-color: #333;
+  }
+  20%, 50%, 80% {
+    background-color: #3498db;
+  }
+  85% {
+    background-color: #333;
+  }
+  90%, 100% {
+    background-color: #3498db;
+  }
+}
+@keyframes eyeBlink {
+  0%, 10% {
+    background-color: #3498db;
+  }
+  15% {
+    background-color: #333;
+  }
+  20%, 50%, 80% {
+    background-color: #3498db;
+  }
+  85% {
+    background-color: #333;
+  }
+  90%, 100% {
+    background-color: #3498db;
+  }
+}
